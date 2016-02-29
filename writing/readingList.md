@@ -1,8 +1,18 @@
-Fong, B., Fong, A., & Li, C. K. (2011). Telemedicine technologies: Information technologies in medicine and telehealth. Chichester, West Sussex, U.K.: John Wiley & Sons.
+https://books.google.com/books?hl=en&lr=&id=8-__AwAAQBAJ&oi=fnd&pg=PR2&dq=importance+of+gene+banks&ots=oCIhTl7XUB&sig=oa9JBAijgIIrnRRLxQhSDyK5Zx4#v=onepage&q=importance%20of%20gene%20banks&f=false
 
-Jordan-Marsh, M. (2011). Health technology literacy: A transdisciplinary framework for consumer-oriented practice. Sudbury, MA: Jones & Bartlett Learning.Jordan
+(citation w/o specified pages) 
+Plucknett, Donald L., and Nigel J.H. Smith. Gene Banks and the World's Food. New Jersey: Princeton UP., 1987. Print.
 
-Smith, A. C., & Maeder, A. (2010). Global telehealth: Selected papers from Global Telehealth 2010 (GT2010): 15th International Conference of the International Society for Telemedicine and eHealth and 1st National Conference of the Australasian Telehealth Society. Amsterdam: IOS Press.Smith
+___
+http://www.nap.edu/catalog/12860/understanding-the-changing-planet-strategic-directions-for-the-geographical-sciences
 
-Vrbová, G., Hudlická, O., & Centofanti, K. S. (2008). Application of muscle/nerve stimulation in health and disease (Vol. 4). Dordrecht: Springer.Vrbova
+(citation w/o specified pages) 
 
+
+___
+http://onlinelibrary.wiley.com/doi/10.1111/1468-2346.00133/epdf
+
+(citation w/o specified pages) 
+
+___
+https://books.google.com/books?hl=en&lr=&id=MbjYBAAAQBAJ&oi=fnd&pg=PP1&dq=agricultural+breeding&ots=GouN8sUHGh&sig=7asZjU0k3rTiPtyswUdZlRT4nPE#v=onepage&q=agricultural%20breeding&f=false
