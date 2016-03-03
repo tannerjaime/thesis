@@ -42,3 +42,10 @@ http://onlinelibrary.wiley.com/doi/10.1046/j.1523-1739.1994.08010039.x/abstract
 
 interesting
 ___
+http://www.sciencedirect.com/science/article/pii/S1369848615001284
+
+omg they reference Derrida 
+___
+http://www.sciencedirect.com/science/article/pii/S1369848615001284#bib6
+
+getting warmer 
