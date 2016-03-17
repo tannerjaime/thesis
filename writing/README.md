@@ -58,3 +58,6 @@
     Evaluation of Methodology Used
     Future Directions 
 ### [Bibliography] (https://github.com/tannerjaime/thesis/blob/master/writing/bibliography.md)
+
+### [Ideal Data Structure](https://github.com/tannerjaime/thesis/blob/master/writing/sampleDataStructure.js)
+### [Story Map](https://github.com/tannerjaime/thesis/blob/master/writing/storyMap.md)
