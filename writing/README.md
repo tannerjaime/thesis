@@ -5,7 +5,8 @@
 ### Acknowledgements
 ### [1. Introduction](https://github.com/tannerjaime/thesis/blob/master/writing/introduction.md)
     1.1 Motivation
-        Why we bank seeds - big picture 
+        Our vulnerability due to genetic drift and monocultures
+        Why evaluating diversity is difficult, how this visual will attempt to address this
     1.2 ex situ Plant Conservation
         1.2.1 Intentions and Objectives of Seed Banks
         1.2.2 An Overview of Current Global Effort
