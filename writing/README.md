@@ -37,7 +37,7 @@
         3.1.1 Svalbard Global Seed Bank Database
         3.1.2 USDA PLANTS Database
         3.1.3 Global Biodiversity Information Facility
-        ### [Ideal Data Structure](https://github.com/tannerjaime/thesis/blob/master/writing/sampleDataStructure.js)
+       [Ideal Data Structure](https://github.com/tannerjaime/thesis/blob/master/writing/sampleDataStructure.js)
     3.2 Examining Diversity 
         3.2.1 Examining Diversity Within Species
         3.2.2 Comparing Characteristics
