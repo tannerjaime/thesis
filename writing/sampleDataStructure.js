@@ -21,3 +21,6 @@
         "climate": "arid",
     }
 };
+
+http://ecocrop.fao.org/ecocrop/srv/en/cropSearchForm
+http://plants.usda.gov/java/characteristics
