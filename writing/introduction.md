@@ -2,7 +2,10 @@
 
 1.1 Motivation
 
-As world population and food demand increases, and the looming threats of climate change intensify, conserving the genetic diversity of both our crop plants as well as related wild species becomes increasingly imperative. Access to genetically diverse plant species allows plant breeders to produce crop varieties that are more resilient and better adapted to their habitat, resulting in greater crop yield (Plucknett & Nigel, 1987, p. 3). As such, the genetic information preserved within each plant species remains a tremendously valuable natural resource. 
+As world population and food demand increases, and the looming threats of climate change intensify, conserving the diversity of both our crop plants as well as related wild species becomes increasingly imperative. In the last 100 years, more than 90% of crop varieties have disappeared from the world’s farms, and currently 75% of the world’s food comes from only 12 plant species. 
+
+Access to diverse plant species allows plant breeders to produce crop varieties that are more resilient and better adapted to their habitat, resulting in greater crop yield (Plucknett & Nigel, 1987, p. 3). Further,  As such, the genetic information preserved within each plant species remains a tremendously valuable natural resource.
+
 
 With growing necessity and urgency placed on conserving the genetic information of crop species comes the very practical question of preservation. While crop diversity has historically been maintained informally through cultivation within farm communities, seed banks have increasingly become the answer to limitations in space and resources. They provide a centralized repository for collecting and storing germplasm and allows for the protection of present crop varieties as well as antique or rare plant species that are no longer cultivated (Plucknett & Nigel, 1987, p. 4).
 
