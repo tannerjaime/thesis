@@ -16,7 +16,7 @@
         1.3.3 Control of Depositors 
     1.4 Approach
         Thesis outlines a process for representing the diversity within one seed bank and investigating how rich a representation of the planet’s plant biodiversity these archives provide.
-### 2. Data & Context
+### [2. Data & Context](https://github.com/tannerjaime/thesis/blob/master/writing/context.md)
     2.1 Svalbard Global Seed Bank
         Description of the facility
             Origin
