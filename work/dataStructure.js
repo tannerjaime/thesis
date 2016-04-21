@@ -102,6 +102,9 @@
        order: 'Cycadales',
        family: 'Cycadaceae',
        genus: 'Cycas' } ,
+    pubCount: 3,
     natureCounts : 2,
-    natureDOI : ['http://dx.doi.org/10.1038/scientificamerican0858-117', 'http://dx.doi.org/10.1038/scientificamerican0858-117']
+    natureDOI : ['http://dx.doi.org/10.1038/scientificamerican0858-117', 'http://dx.doi.org/10.1038/scientificamerican0858-117'],
+    scienceCount: 1,
+    scienceDOI: ['http://dx.doi.org/10.1038/scientificamerican0858-117']
 } ]
