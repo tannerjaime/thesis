@@ -9,7 +9,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/024425b0", "http://dx.doi.org/10.1038/hdy.2013.11"],
+    "natureTitles": ["<i>Notes</i>", "Dancing together and separate again: gymnosperms exhibit frequent changes of fundamental 5S and 35S rRNA gene (rDNA) organisation"]
 }, {
     "sciName": "Cycas collina",
     "species": "collina",
@@ -69,7 +71,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 21
+    "natureCount": 21,
+    "natureArticles": ["http://dx.doi.org/10.1038/056237c0", "http://dx.doi.org/10.1038/scientificamerican08101907-94supp", "http://dx.doi.org/10.1038/074418a0", "http://dx.doi.org/10.1038/203094a0", "http://dx.doi.org/10.1038/084060b0", "http://dx.doi.org/10.1038/047342a0", "http://dx.doi.org/10.1038/236234a0", "http://dx.doi.org/10.1038/37918", "http://dx.doi.org/10.1038/056455b0", "http://dx.doi.org/10.1038/npre.2007.819.1", "http://dx.doi.org/10.1038/056600a0", "http://dx.doi.org/10.1038/160078a0", "http://dx.doi.org/10.1038/085024a0", "http://dx.doi.org/10.1038/002110a0", "http://dx.doi.org/10.1038/015188a0", "http://dx.doi.org/10.1038/084369b0", "http://dx.doi.org/10.1038/bjc.1974.217", "http://dx.doi.org/10.1038/061142a0", "http://dx.doi.org/10.1038/nrneurol.2013.203", "http://dx.doi.org/10.1038/sj.hdy.6800616", "http://dx.doi.org/10.1038/srep06931"],
+    "natureTitles": ["Societies and Academies", "The Seed, a Chapter in Evolution", "<i>The British Association</i>", "A Haploid Tissue Culture from the Female Gametophyte of Ginkgo biloba L.", "<i>Societies and Academies</i>", "Fossil Plants as Tests of Climate", "Decomposition of Methylazoxymethanol, the Aglycone of Cycasin, in D2O", "The origin and early evolution of plants on land", "The British Association", "CARE1, a TY3-gypsy long terminal repeat retrotransposon in the food legume chickpea (Cicer arietinum L)", "Botany at the British Association", "Nutrition and Symbiosis*", "<i>Agriculture at the British Association</i>", "On the Progress of Botany in 1869", "<i>Notes</i>", "<i>Notes</i>", "Morphological and Biochemical Effects of 1,2-Dimethylhydrazine and 1-Methylhydrazine in Rats and Mice", "<i>Societies and Academies</i>", "The epidemiology of ALS: a conspiracy of genes, environment and time", "Genetic variation of <i>Ginkgo biloba</i> L. (Ginkgoaceae) based on cpDNA PCR-RFLPs: inference of glacial refugia", "Quantification of neurotoxin BMAA (β-<i>N</i>-methylamino-L-alanine) in seafood from Swedish markets"]
 }, {
     "sciName": "Cycas guizhouensis",
     "species": "guizhouensis",
@@ -117,7 +121,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/183834a0"],
+    "natureTitles": ["Mitosis in the Microspore of <span>Encephalartos</span> <span>barteri</span> Carruth."]
 }, {
     "sciName": "Encephalartos tegulaneus",
     "species": "tegulaneus",
@@ -129,7 +135,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/2031211a0"],
+    "natureTitles": ["Out in the Midday Sun"]
 }, {
     "sciName": "Macrozamia heteromera",
     "species": "heteromera",
@@ -153,7 +161,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp", "http://dx.doi.org/10.1038/nrg1114"],
+    "natureTitles": ["Palms in Central Florida", "An evolutionary scenario for the origin of flowers"]
 }, {
     "sciName": "Cycas circinalis",
     "species": "circinalis",
@@ -165,7 +175,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 15
+    "natureCount": 15,
+    "natureArticles": ["http://dx.doi.org/10.1038/2061363a0", "http://dx.doi.org/10.1038/210841b0", "http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp", "http://dx.doi.org/10.1038/bjc.1968.66", "http://dx.doi.org/10.1038/scientificamerican12171864-385a", "http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp", "http://dx.doi.org/10.1038/236234a0", "http://dx.doi.org/10.1038/npre.2011.6559.1", "http://dx.doi.org/10.1038/020589a0", "http://dx.doi.org/10.1038/2161311a0", "http://dx.doi.org/10.1038/bjc.1969.93", "http://dx.doi.org/10.1038/scientificamerican03301895-16045csupp", "http://dx.doi.org/10.1038/bjc.1974.217", "http://dx.doi.org/10.1038/nrg2680", "http://dx.doi.org/10.1038/srep06931"],
+    "natureTitles": ["Cycasin Content of <span>Cycas</span> <span>circinalis</span>", "Effect of Boiling and Storing on Cycasin Content of <span>Cycas</span> <span>circinalis</span> L.", "Cycads at Kew", "Tumours of the liver, kidney and lungs in rats fed <i>Encephalartos hildebrandtii</i>", "Moustache Spoon", "Palms in Central Florida", "Decomposition of Methylazoxymethanol, the Aglycone of Cycasin, in D2O", "Early exposure to environmental toxin contributes to neuronal vulnerability and axonal pathology in a model of familial ALS", "<i>Notes</i>", "Induction of a Neurological Disorder by Cycasin in Mice", "Induction of kidney tumours in the rats by feeding <i>Encephalartos hildebrandtii</i> for short periods.", "Sago Cultivation", "Morphological and Biochemical Effects of 1,2-Dimethylhydrazine and 1-Methylhydrazine in Rats and Mice", "Genetics of motor neuron disorders: new insights into pathogenic mechanisms", "Quantification of neurotoxin BMAA (β-<i>N</i>-methylamino-L-alanine) in seafood from Swedish markets"]
 }, {
     "sciName": "Alethopteris australis",
     "species": "australis",
@@ -177,7 +189,9 @@
         "family": "Medullosaceae",
         "genus": "Alethopteris"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/030439a0", "http://dx.doi.org/10.1038/030094c0"],
+    "natureTitles": ["<i>The British Association</i>", "Societies and Academies"]
 }, {
     "sciName": "Alethopteris dacreanii",
     "species": "dacreanii",
@@ -283,7 +297,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 5
+    "natureCount": 5,
+    "natureArticles": ["http://dx.doi.org/10.1038/hdy.2013.143", "http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp", "http://dx.doi.org/10.1038/scientificamerican05121894-15315bsupp", "http://dx.doi.org/10.1038/scientificamerican12121885-8280asupp", "http://dx.doi.org/10.1038/sj.hdy.6801001"],
+    "natureTitles": ["Comparative linkage maps suggest that fission, not polyploidy, underlies near-doubling of chromosome number within monkeyflowers (<i>Mimulus</i>; Phrymaceae)", "Palms in Central Florida", "The World's Columbian Exposition from a Botanical Standpoint", "Benedict Roezl", "EST-SSRs as a resource for population genetic analyses"]
 }, {
     "sciName": "Zamia chigua",
     "species": "chigua",
@@ -307,7 +323,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican12121885-8280asupp"],
+    "natureTitles": ["Benedict Roezl"]
 }, {
     "sciName": "Zamia skinneri",
     "species": "skinneri",
@@ -355,7 +373,9 @@
         "family": "Zamiaceae",
         "genus": "Ceratozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/hdy.2013.11"],
+    "natureTitles": ["Dancing together and separate again: gymnosperms exhibit frequent changes of fundamental 5S and 35S rRNA gene (rDNA) organisation"]
 }, {
     "sciName": "Ceratozamia beccarae",
     "species": "beccarae",
@@ -463,7 +483,9 @@
         "family": "Zamiaceae",
         "genus": "Ceratozamia"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/005153b0", "http://dx.doi.org/10.1038/090416a0"],
+    "natureTitles": ["<i>Scientific Serials</i>", "<i>Notes</i>"]
 }, {
     "sciName": "Ceratozamia miqueliana",
     "species": "miqueliana",
@@ -735,7 +757,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/068377a0"],
+    "natureTitles": ["<i>The Origin of Seed-Bearing Plants</i><sup>1</sup>"]
 }, {
     "sciName": "Cycas sexseminifera",
     "species": "sexseminifera",
@@ -783,7 +807,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/npre.2007.241.1"],
+    "natureTitles": ["Systema Naturae. Classification of living things."]
 }, {
     "sciName": "Cycas armstrongii",
     "species": "armstrongii",
@@ -924,7 +950,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp"],
+    "natureTitles": ["Cycads at Kew"]
 }, {
     "sciName": "Cycas cairnsiana",
     "species": "cairnsiana",
@@ -959,7 +987,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/036207a0", "http://dx.doi.org/10.1038/056455b0"],
+    "natureTitles": ["<i>Notes</i>", "The British Association"]
 }, {
     "sciName": "Cycas cantafolia",
     "species": "cantafolia",
@@ -983,7 +1013,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 4
+    "natureCount": 4,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican03301895-16045csupp", "http://dx.doi.org/10.1038/ncomms4722", "http://dx.doi.org/10.1038/nplants.2015.222", "http://dx.doi.org/10.1038/sj.cr.7290302"],
+    "natureTitles": ["Sago Cultivation", "Sample sequencing of vascular plants demonstrates widespread conservation and divergence of microRNAs", "Evolutionary patterns of genic DNA methylation vary across land plants", "Identification and characterization of new plant microRNAs using EST analysis"]
 }, {
     "sciName": "Cycas chamaoensis",
     "species": "chamaoensis",
@@ -1174,7 +1206,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/sj.hdy.6800616"],
+    "natureTitles": ["Genetic variation of <i>Ginkgo biloba</i> L. (Ginkgoaceae) based on cpDNA PCR-RFLPs: inference of glacial refugia"]
 }, {
     "sciName": "Cycas gracilis",
     "species": "gracilis",
@@ -1186,7 +1220,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/npre.2007.241.1", "http://dx.doi.org/10.1038/srep15570"],
+    "natureTitles": ["Systema Naturae. Classification of living things.", "Environmental neurotoxin interaction with proteins: Dose-dependent increase of free and protein-associated BMAA (β-<i>N</i>-methylamino-L-alanine) in neonatal rat brain"]
 }, {
     "sciName": "Cycas hainanensis",
     "species": "hainanensis",
@@ -1234,7 +1270,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/266530a0", "http://dx.doi.org/10.1038/086590a0"],
+    "natureTitles": ["Detection in primitive gymnosperms of proteins and glycoproteins of possible significance in reproduction", "<i>Notes</i>"]
 }, {
     "sciName": "Cycas indica",
     "species": "indica",
@@ -1246,7 +1284,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 8
+    "natureCount": 8,
+    "natureArticles": ["http://dx.doi.org/10.1038/060581a0", "http://dx.doi.org/10.1038/scientificamerican11041882-5701asupp", "http://dx.doi.org/10.1038/srep15523", "http://dx.doi.org/10.1038/hdy.1971.55", "http://dx.doi.org/10.1038/056129c0", "http://dx.doi.org/10.1038/053170a0", "http://dx.doi.org/10.1038/hdy.1971.64", "http://dx.doi.org/10.1038/041492a0"],
+    "natureTitles": ["The British Association", "Jubæa Spectabilis", "Surface soil phytoliths as vegetation and altitude indicators: a study from the southern Himalaya", "Nucleolar suppression, its inheritance and association with taxonomy and sex in the genus <i>Ribes</i>", "Notes", "Flore de l'Ile de la Réunion ‘Bourbon] avec l'Indication des Propriétés Économiques et Industrielles des Plantes", "Index of Species", "The Origin and Composition of the Flora of the Keeling Islands"]
 }, {
     "sciName": "Cycas javana",
     "species": "javana",
@@ -1270,7 +1310,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 5
+    "natureCount": 5,
+    "natureArticles": ["http://dx.doi.org/10.1038/154234b0", "http://dx.doi.org/10.1038/hdy.1971.55", "http://dx.doi.org/10.1038/srep15523", "http://dx.doi.org/10.1038/068556a0", "http://dx.doi.org/10.1038/hdy.1971.64"],
+    "natureTitles": ["Miss Grace Wigglesworth", "Nucleolar suppression, its inheritance and association with taxonomy and sex in the genus <i>Ribes</i>", "Surface soil phytoliths as vegetation and altitude indicators: a study from the southern Himalaya", "<i>The British Association</i>", "Index of Species"]
 }, {
     "sciName": "Cycas thouarsii",
     "species": "thouarsii",
@@ -1282,7 +1324,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/266530a0", "http://dx.doi.org/10.1038/478430a"],
+    "natureTitles": ["Detection in primitive gymnosperms of proteins and glycoproteins of possible significance in reproduction", "Evolution: New origins for old plants"]
 }, {
     "sciName": "Cycas lacrimans",
     "species": "lacrimans",
@@ -1354,7 +1398,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp"],
+    "natureTitles": ["Palms in Central Florida"]
 }, {
     "sciName": "Cycas revoluta",
     "species": "revoluta",
@@ -1366,7 +1412,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 28
+    "natureCount": 28,
+    "natureArticles": ["http://dx.doi.org/10.1038/2061363a0", "http://dx.doi.org/10.1038/170253b0", "http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp", "http://dx.doi.org/10.1038/154234b0", "http://dx.doi.org/10.1038/028231a0", "http://dx.doi.org/10.1038/scientificamerican08201898-18929asupp", "http://dx.doi.org/10.1038/210841b0", "http://dx.doi.org/10.1038/056237c0", "http://dx.doi.org/10.1038/scientificamerican11041882-5701asupp", "http://dx.doi.org/10.1038/073557b0", "http://dx.doi.org/10.1038/199418d0", "http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp", "http://dx.doi.org/10.1038/055396a0", "http://dx.doi.org/10.1038/236234a0", "http://dx.doi.org/10.1038/scientificamerican03211896-16861bsupp", "http://dx.doi.org/10.1038/203094a0", "http://dx.doi.org/10.1038/scientificamerican03011887-62bbuild", "http://dx.doi.org/10.1038/056129c0", "http://dx.doi.org/10.1038/scientificamerican02121898-106", "http://dx.doi.org/10.1038/049423a0", "http://dx.doi.org/10.1038/080476a0", "http://dx.doi.org/10.1038/092378a0", "http://dx.doi.org/10.1038/2101015a0", "http://dx.doi.org/10.1038/scientificamerican06011887-144abuild", "http://dx.doi.org/10.1038/hdy.2014.95"],
+    "natureTitles": ["Cycasin Content of <span>Cycas</span> circinalis", "Abnormal Leaves of <span>Cycas</span> <span>revoluta</span> Thunb.", "Cycads at Kew", "Miss Grace Wigglesworth", "<i>Agriculture in Japan</i><sup>1</sup>", "Koontee, the Seminole Bread Root", "Effect of Boiling and Storing on Cycasin Content of <span>Cycas</span> circinalis L.", "Societies and Academies", "Jubæa Spectabilis", "<i>Atlas of Japanese Vegetation</i>", "[Book Reviews]", "Palms in Central Florida", "The Discovery of another Connecting Link between Flowering and Flowerless Plants", "Decomposition of Methylazoxymethanol, the Aglycone of Cycasin, in D2O", "Sargent's Studies of the Forests of Japan", "A Haploid Tissue Culture from the Female Gametophyte of Ginkgo biloba L.", "A New Orleans Garden", "Notes", "A Lateen Ice Boat", "Scientific Serials", "<i>The South-Eastern Union of Scientific Societies</i>", "<i>Notes</i>", "Cell Wall Surface of the Higher Plants", "Wootton", "Sex determination in dioecious <i>Mercurialis annua</i> and its close diploid and polyploid relatives"]
 }, {
     "sciName": "Cycas montana",
     "species": "montana",
@@ -1378,7 +1426,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp", "http://dx.doi.org/10.1038/090168a0", "http://dx.doi.org/10.1038/sj.hdy.6801001"],
+    "natureTitles": ["Palms in Central Florida", "Notes.", "EST-SSRs as a resource for population genetic analyses"]
 }, {
     "sciName": "Cycas multifrondis",
     "species": "multifrondis",
@@ -1414,7 +1464,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/srep15523", "http://dx.doi.org/10.1038/053170a0"],
+    "natureTitles": ["Surface soil phytoliths as vegetation and altitude indicators: a study from the southern Himalaya", "Flore de l'Ile de la Réunion ‘Bourbon] avec l'Indication des Propriétés Économiques et Industrielles des Plantes"]
 }, {
     "sciName": "Cycas nongnoochiae",
     "species": "nongnoochiae",
@@ -1462,7 +1514,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/hdy.2012.2"],
+    "natureTitles": ["Early evolutionary colocalization of the nuclear ribosomal 5S and 45S gene families in seed plants: evidence from the living fossil gymnosperm <i>Ginkgo biloba</i>"]
 }, {
     "sciName": "Cycas platyphylla",
     "species": "platyphylla",
@@ -1474,7 +1528,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/042366a0"],
+    "natureTitles": ["Triassic Fishes and Plants"]
 }, {
     "sciName": "Cycas pranburiensis",
     "species": "pranburiensis",
@@ -1521,7 +1577,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 7
+    "natureCount": 7,
+    "natureArticles": ["http://dx.doi.org/10.1038/hdy.1997.202", "http://dx.doi.org/10.1038/ismej.2012.25", "http://dx.doi.org/10.1038/hdy.1991.62", "http://dx.doi.org/10.1038/hdy.1997.214", "http://dx.doi.org/10.1038/hdy.1991.103", "http://dx.doi.org/10.1038/hdy.1997.215", "http://dx.doi.org/10.1038/sj.hdy.6884860"],
+    "natureTitles": ["Variation in ribosomal DNA within and between populations of <i>Isotoma petraea</i> and <i><span>Macrozamia</span> <span>riedlei</span></i>", "Nodularin, a cyanobacterial toxin, is synthesized <i>in planta</i> by symbiotic <i>Nostoc</i> sp.", "Genetic diversity in the cycad <i><span>Macrozamia</span> <span>riedlei</span></i>", "Author index", "Author Index", "Keyword index", "Genetic diversity in the monospecific Western Australian endemic, <i>Geleznowia verrucosa</i> Turcz. (Rutaceae)"]
 }, {
     "sciName": "Cycas riuminiana",
     "species": "riuminiana",
@@ -1545,7 +1603,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/060581a0", "http://dx.doi.org/10.1038/084046b0"],
+    "natureTitles": ["The British Association", "<i>Notes</i>"]
 }, {
     "sciName": "Cycas sancti-lasallei",
     "species": "sancti-lasallei",
@@ -1605,7 +1665,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/056237c0", "http://dx.doi.org/10.1038/scientificamerican11041882-5701asupp"],
+    "natureTitles": ["Societies and Academies", "Jubæa Spectabilis"]
 }, {
     "sciName": "Cycas simplicipinna",
     "species": "simplicipinna",
@@ -1677,7 +1739,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/srep20934", "http://dx.doi.org/10.1038/npre.2007.241.1", "http://dx.doi.org/10.1038/hdy.2012.2"],
+    "natureTitles": ["Evolution of short inverted repeat in cupressophytes, transfer of <i>accD</i> to nucleus in <i>Sciadopitys verticillata</i> and phylogenetic position of Sciadopityaceae", "Systema Naturae. Classification of living things.", "Early evolutionary colocalization of the nuclear ribosomal 5S and 45S gene families in seed plants: evidence from the living fossil gymnosperm <i>Ginkgo biloba</i>"]
 }, {
     "sciName": "Cycas taiwaniana",
     "species": "taiwaniana",
@@ -1689,7 +1753,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/367031a0"],
+    "natureTitles": ["Credibility as a science"]
 }, {
     "sciName": "Cycas tansachana",
     "species": "tansachana",
@@ -1809,7 +1875,9 @@
         "family": "Zamiaceae",
         "genus": "Dioon"
     },
-    "natureCount": 7
+    "natureCount": 7,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp", "http://dx.doi.org/10.1038/083082a0", "http://dx.doi.org/10.1038/084369b0", "http://dx.doi.org/10.1038/087171a0", "http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp", "http://dx.doi.org/10.1038/080375a0", "http://dx.doi.org/10.1038/092242a0"],
+    "natureTitles": ["Cycads at Kew", "<i>Botanical Papers from Cambridge</i><sup>1</sup>", "<i>Notes</i>", "<i>Morphology of Gymnosperms</i>", "Palms in Central Florida", "<i>Notes</i>", "<i>The British Association at Birmingham</i>"]
 }, {
     "sciName": "Dioon angustifolium",
     "species": "angustifolium",
@@ -1917,7 +1985,9 @@
         "family": "Zamiaceae",
         "genus": "Dioon"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp", "http://dx.doi.org/10.1038/084369b0"],
+    "natureTitles": ["Cycads at Kew", "<i>Notes</i>"]
 }, {
     "sciName": "Dioon stevensonii",
     "species": "stevensonii",
@@ -1953,7 +2023,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/182474a0", "http://dx.doi.org/10.1038/092258a0", "http://dx.doi.org/10.1038/091414a0"],
+    "natureTitles": ["Temperature Variations in Male Cones of <span>Encephalartos</span>", "<i>Societies and Academies</i>", "<i>Societies and Academies</i>"]
 }, {
     "sciName": "Encephalartos horridus",
     "species": "horridus",
@@ -1965,7 +2037,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp"],
+    "natureTitles": ["Cycads at Kew"]
 }, {
     "sciName": "Encephalartos arenarius",
     "species": "arenarius",
@@ -1977,7 +2051,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/nature.2014.16010"],
+    "natureTitles": ["Forensic chemistry could stop African-plant thieves"]
 }, {
     "sciName": "Encephalartos bubalinus",
     "species": "bubalinus",
@@ -2073,7 +2149,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp"],
+    "natureTitles": ["Cycads at Kew"]
 }, {
     "sciName": "Encephalartos dyerianus",
     "species": "dyerianus",
@@ -2097,7 +2175,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/182474a0"],
+    "natureTitles": ["Temperature Variations in Male Cones of <span>Encephalartos</span>"]
 }, {
     "sciName": "Encephalartos equatorialis",
     "species": "equatorialis",
@@ -2156,7 +2236,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/074579a0", "http://dx.doi.org/10.1038/061142a0"],
+    "natureTitles": ["<i>Societies and Academies</i>", "<i>Societies and Academies</i>"]
 }, {
     "sciName": "Encephalartos friderici-guilielmi",
     "species": "friderici-guilielmi",
@@ -2192,7 +2274,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/057070b0"],
+    "natureTitles": ["Societies and Academies"]
 }, {
     "sciName": "Encephalartos graniticolus",
     "species": "graniticolus",
@@ -2252,7 +2336,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 5
+    "natureCount": 5,
+    "natureArticles": ["http://dx.doi.org/10.1038/bjc.1968.66", "http://dx.doi.org/10.1038/bjc.1969.93", "http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp", "http://dx.doi.org/10.1038/bjc.1969.108", "http://dx.doi.org/10.1038/bjc.1968.103"],
+    "natureTitles": ["Tumours of the liver, kidney and lungs in rats fed <i><span>Encephalartos</span> <span>hildebrandtii</span></i>", "Induction of kidney tumours in the rats by feeding <i><span>Encephalartos</span> <span>hildebrandtii</span></i> for short periods.", "Cycads at Kew", "Author Index", "Index to Authors"]
 }, {
     "sciName": "Encephalartos hirsutus",
     "species": "hirsutus",
@@ -2348,7 +2434,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican05221886-8662asupp", "http://dx.doi.org/10.1038/scientificamerican05221886-8662bsupp", "http://dx.doi.org/10.1038/hdy.2013.11"],
+    "natureTitles": ["The Flowering of Cycads", "Sheep", "Dancing together and separate again: gymnosperms exhibit frequent changes of fundamental 5S and 35S rRNA gene (rDNA) organisation"]
 }, {
     "sciName": "Encephalartos latifrons",
     "species": "latifrons",
@@ -2384,7 +2472,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/nature.2014.16010"],
+    "natureTitles": ["Forensic chemistry could stop African-plant thieves"]
 }, {
     "sciName": "Encephalartos poggei",
     "species": "poggei",
@@ -2480,7 +2570,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/024425b0", "http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp", "http://dx.doi.org/10.1038/hdy.2013.11"],
+    "natureTitles": ["<i>Notes</i>", "Cycads at Kew", "Dancing together and separate again: gymnosperms exhibit frequent changes of fundamental 5S and 35S rRNA gene (rDNA) organisation"]
 }, {
     "sciName": "Encephalartos msinganus",
     "species": "msinganus",
@@ -2492,7 +2584,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/hdy.2013.11"],
+    "natureTitles": ["Dancing together and separate again: gymnosperms exhibit frequent changes of fundamental 5S and 35S rRNA gene (rDNA) organisation"]
 }, {
     "sciName": "Encephalartos munchii",
     "species": "munchii",
@@ -2660,7 +2754,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp", "http://dx.doi.org/10.1038/182474a0", "http://dx.doi.org/10.1038/091414a0"],
+    "natureTitles": ["Cycads at Kew", "Temperature Variations in Male Cones of <span>Encephalartos</span>", "<i>Societies and Academies</i>"]
 }, {
     "sciName": "Encephalartos turneri",
     "species": "turneri",
@@ -2719,7 +2815,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/081016b0"],
+    "natureTitles": ["<i>Notes</i>"]
 }, {
     "sciName": "Eriozamia latifolia",
     "species": "latifolia",
@@ -2767,7 +2865,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/hdy.1991.62", "http://dx.doi.org/10.1038/35012251"],
+    "natureTitles": ["Genetic diversity in the cycad <i><span>Macrozamia</span> riedlei</i>", "Systematic conservation planning"]
 }, {
     "sciName": "Macrozamia cardiacensis",
     "species": "cardiacensis",
@@ -2814,7 +2914,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 5
+    "natureCount": 5,
+    "natureArticles": ["http://dx.doi.org/10.1038/110499b0", "http://dx.doi.org/10.1038/034547d0", "http://dx.doi.org/10.1038/112620b0", "http://dx.doi.org/10.1038/005372a0", "http://dx.doi.org/10.1038/106424b0"],
+    "natureTitles": ["Societies and Academies", "<i>The Colonial and Indian Exhibition</i>", "The Occurrence of Urease", "<i>Scientific Serials</i>", "Societies and Academies"]
 }, {
     "sciName": "Macrozamia crassifolia",
     "species": "crassifolia",
@@ -2861,7 +2963,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/hdy.1991.103"],
+    "natureTitles": ["Author Index"]
 }, {
     "sciName": "Macrozamia eriolepis",
     "species": "eriolepis",
@@ -2896,7 +3000,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp"],
+    "natureTitles": ["Palms in Central Florida"]
 }, {
     "sciName": "Macrozamia lomandroides",
     "species": "lomandroides",
@@ -2955,7 +3061,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/ismej.2012.25"],
+    "natureTitles": ["Nodularin, a cyanobacterial toxin, is synthesized <i>in planta</i> by symbiotic <i>Nostoc</i> sp."]
 }, {
     "sciName": "Macrozamia montana",
     "species": "montana",
@@ -2967,7 +3075,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp"],
+    "natureTitles": ["Palms in Central Florida"]
 }, {
     "sciName": "Macrozamia mountperiensis",
     "species": "mountperiensis",
@@ -2991,7 +3101,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/ismej.2012.25"],
+    "natureTitles": ["Nodularin, a cyanobacterial toxin, is synthesized <i>in planta</i> by symbiotic <i>Nostoc</i> sp."]
 }, {
     "sciName": "Macrozamia occidua",
     "species": "occidua",
@@ -3098,7 +3210,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/061065a0", "http://dx.doi.org/10.1038/hdy.2013.11"],
+    "natureTitles": ["<i>Botany at the British Association</i>", "Dancing together and separate again: gymnosperms exhibit frequent changes of fundamental 5S and 35S rRNA gene (rDNA) organisation"]
 }, {
     "sciName": "Macrozamia reducta",
     "species": "reducta",
@@ -3122,7 +3236,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/266530a0"],
+    "natureTitles": ["Detection in primitive gymnosperms of proteins and glycoproteins of possible significance in reproduction"]
 }, {
     "sciName": "Macrozamia secunda",
     "species": "secunda",
@@ -3146,7 +3262,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/ismej.2012.25"],
+    "natureTitles": ["Nodularin, a cyanobacterial toxin, is synthesized <i>in planta</i> by symbiotic <i>Nostoc</i> sp."]
 }, {
     "sciName": "Macrozamia stenomera",
     "species": "stenomera",
@@ -3170,7 +3288,9 @@
         "family": "Zamiaceae",
         "genus": "Microcycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/092242a0"],
+    "natureTitles": ["<i>The British Association at Birmingham</i>"]
 }, {
     "sciName": "Microcycas velutina",
     "species": "velutina",
@@ -3314,7 +3434,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican06271874-401", "http://dx.doi.org/10.1038/scientificamerican12121885-8280asupp", "http://dx.doi.org/10.1038/hdy.2013.11"],
+    "natureTitles": ["Sources of Edible Starch", "Benedict Roezl", "Dancing together and separate again: gymnosperms exhibit frequent changes of fundamental 5S and 35S rRNA gene (rDNA) organisation"]
 }, {
     "sciName": "Zamia boliviana",
     "species": "boliviana",
@@ -3338,7 +3460,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp"],
+    "natureTitles": ["Cycads at Kew"]
 }, {
     "sciName": "Zamia loddigesii",
     "species": "loddigesii",
@@ -3398,7 +3522,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08201898-18929asupp", "http://dx.doi.org/10.1038/056600a0", "http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp"],
+    "natureTitles": ["Koontee, the Seminole Bread Root", "Botany at the British Association", "Palms in Central Florida"]
 }, {
     "sciName": "Phyllopteroides expansa",
     "species": "expansa",
@@ -3519,7 +3645,9 @@
         "order": "Cycadales",
         "genus": "Ptilophyllum"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/130024b0"],
+    "natureTitles": ["Reconstruction of an Indian Fossil Cycad"]
 }, {
     "sciName": "Ptilophyllum fasciatum",
     "species": "fasciatum",
@@ -3609,7 +3737,9 @@
         "family": "Medullosaceae",
         "genus": "Trigonocarpus"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/079433b0"],
+    "natureTitles": ["<i>Notes</i>"]
 }, {
     "sciName": "Zamia acuminata",
     "species": "acuminata",
@@ -3801,7 +3931,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/nature11922", "http://dx.doi.org/10.1038/scientificamerican05031884-6946supp", "http://dx.doi.org/10.1038/068556a0"],
+    "natureTitles": ["Mutations in prion-like domains in hnRNPA2B1 and hnRNPA1 cause multisystem proteinopathy and ALS", "Glasgow Botanic Garden", "<i>The British Association</i>"]
 }, {
     "sciName": "Zamia encephalartoides",
     "species": "encephalartoides",
@@ -3871,7 +4003,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp", "http://dx.doi.org/10.1038/scientificamerican05031884-6946supp"],
+    "natureTitles": ["Palms in Central Florida", "Glasgow Botanic Garden"]
 }, {
     "sciName": "Zamia gomeziana",
     "species": "gomeziana",
@@ -3954,7 +4088,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp"],
+    "natureTitles": ["Palms in Central Florida"]
 }, {
     "sciName": "Zamia ipetiensis",
     "species": "ipetiensis",
@@ -4013,7 +4149,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/098451a0"],
+    "natureTitles": ["<i>Notes</i>"]
 }, {
     "sciName": "Zamia lindleyi",
     "species": "lindleyi",
@@ -4180,7 +4318,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/hdy.2013.11"],
+    "natureTitles": ["Dancing together and separate again: gymnosperms exhibit frequent changes of fundamental 5S and 35S rRNA gene (rDNA) organisation"]
 }, {
     "sciName": "Zamia prasina",
     "species": "prasina",
@@ -4371,7 +4511,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/nature09916"],
+    "natureTitles": ["Ancestral polyploidy in seed plants and angiosperms"]
 }, {
     "sciName": "Zamia wallisii",
     "species": "wallisii",
@@ -4383,7 +4525,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican12121885-8280asupp"],
+    "natureTitles": ["Benedict Roezl"]
 }, {
     "sciName": "Zamia yatesi",
     "species": "yatesi",
@@ -4406,7 +4550,9 @@
         "order": "Cycadales",
         "genus": "Zamites"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/011467c0"],
+    "natureTitles": ["<i>Arctic Geology<sup>*</sup></i>"]
 }, {
     "sciName": "Zamites dowellii",
     "species": "dowellii",
@@ -4497,7 +4643,9 @@
         "family": "Zamiaceae",
         "genus": "Bowenia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/ismej.2012.25"],
+    "natureTitles": ["Nodularin, a cyanobacterial toxin, is synthesized <i>in planta</i> by symbiotic <i>Nostoc</i> sp."]
 }, {
     "sciName": "Bowenia spectabilis",
     "species": "spectabilis",
@@ -4509,7 +4657,9 @@
         "family": "Zamiaceae",
         "genus": "Bowenia"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican12101892-14130asupp", "http://dx.doi.org/10.1038/088056c0", "http://dx.doi.org/10.1038/058632a0"],
+    "natureTitles": ["Cycads at Kew", "<i>Botany at the British Association</i>", "Botany at the British Association"]
 }, {
     "sciName": "Ceratozamia alvarezzi",
     "species": "alvarezzi",
@@ -4878,7 +5028,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican05221886-8662asupp", "http://dx.doi.org/10.1038/hdy.2013.11"],
+    "natureTitles": ["The Flowering of Cycads", "Dancing together and separate again: gymnosperms exhibit frequent changes of fundamental 5S and 35S rRNA gene (rDNA) organisation"]
 }, {
     "sciName": "Cycas hamelini",
     "species": "hamelini",
@@ -4914,7 +5066,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican11041882-5701asupp"],
+    "natureTitles": ["Jubæa Spectabilis"]
 }, {
     "sciName": "Cycas lane-poolei",
     "species": "lane-poolei",
@@ -4950,7 +5104,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 3
+    "natureCount": 3,
+    "natureArticles": ["http://dx.doi.org/10.1038/090168a0", "http://dx.doi.org/10.1038/073525a0", "http://dx.doi.org/10.1038/084046b0"],
+    "natureTitles": ["Notes.", "<i>Societies and Academies</i>", "<i>Notes</i>"]
 }, {
     "sciName": "Cycas micronesica",
     "species": "micronesica",
@@ -4962,7 +5118,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/nrneurol.2013.203"],
+    "natureTitles": ["The epidemiology of ALS: a conspiracy of genes, environment and time"]
 }, {
     "sciName": "Cycas miquelii",
     "species": "miquelii",
@@ -5262,7 +5420,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/091414a0"],
+    "natureTitles": ["<i>Societies and Academies</i>"]
 }, {
     "sciName": "Encephalartos laevifolius",
     "species": "laevifolius",
@@ -5476,7 +5636,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp"],
+    "natureTitles": ["Palms in Central Florida"]
 }, {
     "sciName": "Macrozamia johnsonii",
     "species": "johnsonii",
@@ -5499,7 +5661,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/hdy.1997.214"],
+    "natureTitles": ["Author index"]
 }, {
     "sciName": "Macrozamia oldfieldi",
     "species": "oldfieldi",
@@ -5664,7 +5828,9 @@
         "order": "Cycadales",
         "genus": "Ptilophyllum"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/030439a0"],
+    "natureTitles": ["<i>The British Association</i>"]
 }, {
     "sciName": "Trigonocarpon noeggeratha",
     "species": "noeggeratha",
@@ -5734,7 +5900,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/ismej.2008.14"],
+    "natureTitles": ["Nitrogen fixation by phyllosphere bacteria associated with higher plants and their colonizing epiphytes of a tropical lowland rainforest of Costa Rica"]
 }, {
     "sciName": "Zamia hamannii",
     "species": "hamannii",
@@ -5758,7 +5926,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/009475a0", "http://dx.doi.org/10.1038/scientificamerican12121885-8280asupp"],
+    "natureTitles": ["<i>Societies and Academies</i>", "Benedict Roezl"]
 }, {
     "sciName": "Zamia incognita",
     "species": "incognita",
@@ -5770,7 +5940,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/036367b0"],
+    "natureTitles": ["<i>Botany of San Domingo</i>"]
 }, {
     "sciName": "Zamia nesophila",
     "species": "nesophila",
@@ -5829,7 +6001,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican05031884-6946supp"],
+    "natureTitles": ["Glasgow Botanic Garden"]
 }, {
     "sciName": "Zamia portoricensis",
     "species": "portoricensis",
@@ -5958,7 +6132,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 7
+    "natureCount": 7,
+    "natureArticles": ["http://dx.doi.org/10.1038/nature11922", "http://dx.doi.org/10.1038/ng.2434", "http://dx.doi.org/10.1038/056600a0", "http://dx.doi.org/10.1038/203094a0", "http://dx.doi.org/10.1038/033189b0", "http://dx.doi.org/10.1038/ismej.2008.14", "http://dx.doi.org/10.1038/scientificamerican11101883-293"],
+    "natureTitles": ["Mutations in prion-like domains in hnRNPA2B1 and hnRNPA1 cause multisystem proteinopathy and ALS", "Inhibition of RNA lariat debranching enzyme suppresses TDP-43 toxicity in ALS disease models", "Botany at the British Association", "A Haploid Tissue Culture from the Female Gametophyte of Ginkgo biloba L.", "<i>Societies and Academies</i>", "Nitrogen fixation by phyllosphere bacteria associated with higher plants and their colonizing epiphytes of a tropical lowland rainforest of Costa Rica", "Correspondence"]
 }, {
     "sciName": "Alethopteris mantelli",
     "species": "mantelli",
@@ -6106,7 +6282,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp", "http://dx.doi.org/10.1038/scientificamerican03211896-16861bsupp"],
+    "natureTitles": ["Palms in Central Florida", "Sargent's Studies of the Forests of Japan"]
 }, {
     "sciName": "Cycas chamberlainii",
     "species": "chamberlainii",
@@ -6154,7 +6332,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 4
+    "natureCount": 4,
+    "natureArticles": ["http://dx.doi.org/10.1038/nplants.2015.222", "http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp", "http://dx.doi.org/10.1038/sj.hdy.6800616", "http://dx.doi.org/10.1038/sj.cr.7290302"],
+    "natureTitles": ["Evolutionary patterns of genic DNA methylation vary across land plants", "Palms in Central Florida", "Genetic variation of <i>Ginkgo biloba</i> L. (Ginkgoaceae) based on cpDNA PCR-RFLPs: inference of glacial refugia", "Identification and characterization of new plant microRNAs using EST analysis"]
 }, {
     "sciName": "Cycas glaucophylla",
     "species": "glaucophylla",
@@ -6202,7 +6382,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/hdy.2012.2"],
+    "natureTitles": ["Early evolutionary colocalization of the nuclear ribosomal 5S and 45S gene families in seed plants: evidence from the living fossil gymnosperm <i>Ginkgo biloba</i>"]
 }, {
     "sciName": "Cycas romanzoffiana",
     "species": "romanzoffiana",
@@ -6214,7 +6396,9 @@
         "family": "Cycadaceae",
         "genus": "Cycas"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp"],
+    "natureTitles": ["Palms in Central Florida"]
 }, {
     "sciName": "Cycas saxatilis",
     "species": "saxatilis",
@@ -6286,7 +6470,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/083082a0"],
+    "natureTitles": ["<i>Botanical Papers from Cambridge</i><sup>1</sup>"]
 }, {
     "sciName": "Encephalartos lanuginosus",
     "species": "lanuginosus",
@@ -6310,7 +6496,9 @@
         "family": "Zamiaceae",
         "genus": "Encephalartos"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/009475a0"],
+    "natureTitles": ["<i>Societies and Academies</i>"]
 }, {
     "sciName": "Encephalartos macrophyllus",
     "species": "macrophyllus",
@@ -6370,7 +6558,9 @@
         "family": "Zamiaceae",
         "genus": "Macrozamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp"],
+    "natureTitles": ["Palms in Central Florida"]
 }, {
     "sciName": "Macrozamia denisonii",
     "species": "denisonii",
@@ -6466,7 +6656,9 @@
         "family": "Cycadaceae",
         "genus": "Palmifolia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/srep18618"],
+    "natureTitles": ["Interspecific hybridization, polyploidization, and backcross of <i>Brassica oleracea var. alboglabra</i> with <i>B. rapa</i> var. <i>purpurea</i> morphologically recapitulate the evolution of <i>Brassica</i> vegetables"]
 }, {
     "sciName": "Palmifolia multifoliatum",
     "species": "multifoliatum",
@@ -6618,7 +6810,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican08041888-10501asupp"],
+    "natureTitles": ["Palms in Central Florida"]
 }, {
     "sciName": "Zamia dentata",
     "species": "dentata",
@@ -6666,7 +6860,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/072061b0"],
+    "natureTitles": ["<i>Notes</i>"]
 }, {
     "sciName": "Zamia grandis",
     "species": "grandis",
@@ -6678,7 +6874,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 1
+    "natureCount": 1,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican10091897-18160supp"],
+    "natureTitles": ["The Spread of Land Species by the Agency of Man; With Especial Reference to Insects"]
 }, {
     "sciName": "Zamia latifolia",
     "species": "latifolia",
@@ -6762,7 +6960,9 @@
         "family": "Zamiaceae",
         "genus": "Zamia"
     },
-    "natureCount": 2
+    "natureCount": 2,
+    "natureArticles": ["http://dx.doi.org/10.1038/scientificamerican10091897-18160supp", "http://dx.doi.org/10.1038/010116a0"],
+    "natureTitles": ["The Spread of Land Species by the Agency of Man; With Especial Reference to Insects", "<i>Societies and Academies</i>"]
 }, {
     "sciName": "Zamia vasquezii",
     "species": "vasquezii",
