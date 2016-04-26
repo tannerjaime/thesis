@@ -30,27 +30,20 @@
 	<script src="./js/controls/TrackballControls.js"></script>
 	<script src="./js/libs/dat.gui.min.js"></script>
 	<script src="./js/GPUParticleSystem.js" charset="utf-8"></script>
-
+	<script src="js/loaders/OBJLoader.js"></script>
+	<script src="test.json"></script>
 	<script>
-	
-	var loader = new THREE.JSONLoader();
-	
-	loader.load(
-	// resource URL
-	'/testData.js',
-	// Function when resource is loaded
-	function ( data ) {
-		var material = new THREE.MultiMaterial( materials );
-		var object = new THREE.Mesh( geometry, material );
-		scene.add( object );
-	}
-);
+
+
+console.log(JSON);
+
 
 //tick is time, like setting the draw function framerate
 		var camera, tick = 0,
 //everything is added to the scene, renderer is webgl
 			scene, renderer, clock = new THREE.Clock(true),
-			controls, container, gui = new dat.GUI(),
+			controls, container, 
+			// gui = new dat.GUI(),
 			options, spawnerOptions, particleSystem;
 
 		init();
@@ -82,34 +75,34 @@
 			// options passed during each spawned
 			options = {
 				position: new THREE.Vector3(),
-				positionRandomness: .3,
+				positionRandomness: 0,
 				velocity: new THREE.Vector3(),
-				velocityRandomness: .5,
+				velocityRandomness: 0,
 				color: 0x33cc33,
-				colorRandomness: .2,
-				turbulence: .5,
-				lifetime: 2,
-				size: 5,
-				sizeRandomness: 1
+				colorRandomness: 0,
+				turbulence: 0,
+				lifetime: 100,
+				size: 70,
+				sizeRandomness: 0
 			};
 
 			spawnerOptions = {
-				spawnRate: 15000,
+				spawnRate: 0,
 				horizontalSpeed: 1.5,
 				verticalSpeed: 1.33,
 				timeScale: 1
 			}
 
-			gui.add(options, "velocityRandomness", 0, 3);
-			gui.add(options, "positionRandomness", 0, 3);
-			gui.add(options, "size", 1, 50);
-			gui.add(options, "sizeRandomness", 0, 25);
-			gui.add(options, "colorRandomness", 0, 1);
-			gui.add(options, "lifetime", .1, 10);
-			gui.add(options, "turbulence", 0, 1);
+			// gui.add(options, "velocityRandomness", 0, 3);
+			// gui.add(options, "positionRandomness", 0, 3);
+			// //gui.add(options, "size", 1, 50);
+			// gui.add(options, "sizeRandomness", 0, 25);
+			// gui.add(options, "colorRandomness", 0, 1);
+			// gui.add(options, "lifetime", .1, 10);
+			// gui.add(options, "turbulence", 0, 1);
 
-			gui.add(spawnerOptions, "spawnRate", 0, 30000);
-			gui.add(spawnerOptions, "timeScale", -1, 1);
+			// gui.add(spawnerOptions, "spawnRate", 0, 30000);
+			// gui.add(spawnerOptions, "timeScale", -1, 1);
 
 
 			renderer = new THREE.WebGLRenderer();
@@ -154,9 +147,9 @@
 //whats happening while the particle is alive
 			if (delta > 0) {
 				//where movement is happening
-				options.position.x = Math.sin(tick * spawnerOptions.horizontalSpeed) * 20;
-				options.position.y = Math.sin(tick * spawnerOptions.verticalSpeed) * 10;
-				options.position.z = Math.sin(tick * spawnerOptions.horizontalSpeed + spawnerOptions.verticalSpeed) * 5;
+				options.position.x = Math.random() * 500 - 250;
+				options.position.y = Math.random() * 500 - 250;
+				options.position.z = Math.random() * 500 - 250;
 
 				// for (var x = 0; x < spawnerOptions.spawnRate * delta; x++) {
 					for (var x = 0; x < 2; x++) {
