@@ -23,8 +23,7 @@
 </head>
 
 <body>
-	<div style="position: absolute; top: 10px; width: 100%; text-align: center; color:#eee">
-		<a href="http://threejs.org" target="_blank">three.js</a> - GPU particle system plugin by <a href="http://charliehoey.com">Charlie Hoey</a>.</div>
+	<div style="position: absolute; top: 50px; width: 100%; text-align: center; color:#eee"> TAXONOMIC BIAS </div>
 
 	<script src="../build/three.min.js"></script>
 	<script src="./js/controls/TrackballControls.js"></script>
@@ -37,6 +36,18 @@
 
 console.log(JSON);
 
+// var loader = new THREE.JSONLoader();
+
+// // load a resource
+// loader.load(
+// 	// resource URL
+// 	'test.json',
+// 	// Function when resource is loaded
+// 	function ( geometry, materials ) {
+
+// 	}
+// );
+
 
 //tick is time, like setting the draw function framerate
 		var camera, tick = 0,
@@ -48,9 +59,10 @@ console.log(JSON);
 
 		init();
 		animate();
+		
 
+		var cat = true;
 		function init() {
-
 
 			container = document.createElement('div');
 //body has 1 div
@@ -82,14 +94,14 @@ console.log(JSON);
 				colorRandomness: 0,
 				turbulence: 0,
 				lifetime: 100,
-				size: 70,
+				size: 100,
 				sizeRandomness: 0
 			};
 
 			spawnerOptions = {
 				spawnRate: 0,
-				horizontalSpeed: 1.5,
-				verticalSpeed: 1.33,
+				horizontalSpeed: 0.1,
+				verticalSpeed: 0.1,
 				timeScale: 1
 			}
 
@@ -118,6 +130,11 @@ console.log(JSON);
 			controls.dynamicDampingFactor = 0.3;
 
 			window.addEventListener('resize', onWindowResize, false);
+			options.position.x = 2;
+				options.position.y = 3;
+				options.position.z = 0;
+			particleSystem.spawnParticle(options);
+			console.log(options.position);
 
 		}
 
@@ -139,32 +156,38 @@ console.log(JSON);
 
 //delta compares where you are and where you should be
 //delta is where we are in the particle's lifespan
+			
 			var delta = clock.getDelta() * spawnerOptions.timeScale;
 			tick += delta;
-
+			
 			if (tick < 0) tick = 0;
 
 //whats happening while the particle is alive
-			if (delta > 0) {
+			
+			
 				//where movement is happening
-				options.position.x = Math.random() * 500 - 250;
-				options.position.y = Math.random() * 500 - 250;
-				options.position.z = Math.random() * 500 - 250;
+				// options.position.x = Math.random() * 500 - 250;
+				// options.position.y = Math.random() * 500 - 250;
+				// options.position.z = Math.random() * 500 - 250;
 
-				// for (var x = 0; x < spawnerOptions.spawnRate * delta; x++) {
-					for (var x = 0; x < 2; x++) {
+				//for (var x = 0; x < 1 * delta; x++) {
+					for (var x = 0; x < 1; x++) {
 					// Yep, that's really it.	Spawning particles is super cheap, and once you spawn them, the rest of
 					// their lifecycle is handled entirely on the GPU, driven by a time uniform updated below
-					particleSystem.spawnParticle(options);
+					// particleSystem.spawnParticle(options);
 				}
-			}
-
+			
+			
+			
 			particleSystem.update(tick);
 
 			render();
-
+	
 		}
 
+		
+		
+		
 		function render() {
 
 			renderer.render(scene, camera);
