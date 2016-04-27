@@ -33,9 +33,6 @@
 	<script src="test.json"></script>
 	<script>
 
-
-console.log(JSON);
-
 // var loader = new THREE.JSONLoader();
 
 // // load a resource
@@ -95,7 +92,8 @@ console.log(JSON);
 				turbulence: 0,
 				lifetime: 100,
 				size: 100,
-				sizeRandomness: 0
+				sizeRandomness: 0,
+				
 			};
 
 			spawnerOptions = {
@@ -130,12 +128,15 @@ console.log(JSON);
 			controls.dynamicDampingFactor = 0.3;
 
 			window.addEventListener('resize', onWindowResize, false);
-			options.position.x = 2;
-				options.position.y = 3;
-				options.position.z = 0;
+			
+			for (var i = 0; i < obj.length; i++){
+			options.position.x = 3 * i;
+			//options.position.y = Math.random() * 50;
+			// options.position.z = Math.random() * 10;
+			options.name = obj[i].species
 			particleSystem.spawnParticle(options);
-			console.log(options.position);
-
+			console.log(options.name);
+			}
 		}
 
 		function onWindowResize() {
@@ -146,7 +147,7 @@ console.log(JSON);
 			renderer.setSize(window.innerWidth, window.innerHeight);
 
 		}
-
+		
 		function animate() {
 
 			requestAnimationFrame(animate);
