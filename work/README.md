@@ -4,7 +4,7 @@
 ### Project Plan
 Project plan for the coming weeks :
 
-    -Continue to parse the GBIF API until I have all seed species. So far this has proven difficult as there are many subspecies using the name of a species, and so resolving this issue is my first priority
+    -Continue to parse the GBIF API until I have all seed species. 
     
     -Take the scientific name and query the Nature API. Tried this with the species name but it was not specific enough, and would often
     bring up authors last names and other unrelated content. Take both the number of mentions and the articles that are being mentioned.
