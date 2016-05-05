@@ -3,7 +3,7 @@
 
 ### [Data Collection and Organization](https://github.com/tannerjaime/thesis/tree/master/work/data%20work)
 
-* Query the [GBIF API](http://www.gbif.org/developer/summary) on the command line and return JSON files.
+* [GBIF API](http://www.gbif.org/developer/summary) was queried on the command line and returned JSON files.
 * gbifRequest.js : calls JSON files, reorganizes and merges them into one JSON file
 * natureRequest.js : queries the [Nature OpenSearch API] (http://www.nature.com/developers/documentation/api-references/opensearch-api/) using the scientific name of each species, and creates a JSON file with the number of articles, and article titles and DOI. 
     
