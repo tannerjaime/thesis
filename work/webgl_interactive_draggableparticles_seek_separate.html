@@ -327,7 +327,8 @@
 				var intersects = raycaster.intersectObject(plane);
 
 				if (intersects.length > 0) {
-
+					//when clicked, do this
+					console.log(SELECTED.species);
 					SELECTED.material.color.setHex(0xff0000);
 					SELECTED.position.copy(intersects[0].point.sub(offset));
 
