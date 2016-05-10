@@ -34,8 +34,8 @@
 			this.origin = new THREE.Vector3(0, 0, 0);
 			this.particles = [];
 
-			this.addParticle = function() {
-				this.particles.push(new Particle(new THREE.Vector3(Math.random() * 100 - 50), 0, 0));
+			this.addParticle = function(k, p, c, o, f, g, s, sn, count, link, title) {
+				this.particles.push(new Particle(new THREE.Vector3((Math.random() * 100 - 50), 0, 0), k, p, c, o, f, g, s, sn, count, link, title));
 			};
 
 			this.run = function() {
@@ -59,7 +59,7 @@
 
 		};
 
-		var Particle = function(position) {
+		var Particle = function(position, k, p, c, o, f, g, s, sn, count, link, title) {
 			this.acceleration = new THREE.Vector3(0, 0, 0);
 			this.velocity = new THREE.Vector3(0, 0, 0);
 			this.lifespan = 20.0;
@@ -79,7 +79,22 @@
 				wireframe: false
 			}));
 			this.object.position = position.clone();
-
+			this.object.kingdom = k;
+			this.object.phylum= p;
+			this.object.class = c;
+			this.object.order = o;
+			this.object.family = f;
+			this.object.genus = g;
+			this.object.species = s;
+			this.object.sciName = sn;
+			this.object.natureCount = count;
+			this.object.natureArticles = (JSON.stringify(link));
+			// this.object.natureLink = [];
+			// this.object.natureTitle = [];
+			// for (var i = 0; i < link.length; i++){
+			// this.object.natureLink.push(link);
+			// this.object.natureTitle.push(title);
+			// }
 			// Optional shadows
 			// this.object.castShadow = true;
 			// this.object.receiveShadow = true;
@@ -423,7 +438,7 @@
 			for (var i = 0; i < cnidaria.length; i ++){
 			if (cnidaria[i].classification.genus == 'Alcyonium') {
 				// if (ps.particles.length < 500)
-				ps.addParticle();
+				ps.addParticle(cnidaria[i].classification.kingdom, cnidaria[i].classification.phylum, cnidaria[i].classification.class, cnidaria[i].classification.order, cnidaria[i].classification.family, cnidaria[i].classification.genus, cnidaria[i].species, cnidaria[i].sciName, cnidaria[i].natureCount, cnidaria[i].natureArticles, cnidaria[i].natureTitles );
 				// console.log("this is current particle"  + Particle);
 			}
 			else {
