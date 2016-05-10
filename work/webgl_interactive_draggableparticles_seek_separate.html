@@ -106,7 +106,9 @@
 
 			this.applyBehaviors = function(particles) {
 				var separateForce = this.separate(particles);
-				var seekForce = this.seek(new THREE.Vector3(mouse.x * window.innerWidth, mouse.y * window.innerHeight, 0));
+				
+				//sets where particles will move 
+				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, window.innerHeight / 2, 0));
 
 				// relationship between separation and seeking
 				separateForce.multiplyScalar(10); // double separation
