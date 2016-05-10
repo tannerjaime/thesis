@@ -69,13 +69,13 @@
 			this.maxforce = 0.2; // Maximum steering force
 
 			// throw the dice to simulate a specific species from the db
-			this.species = Math.floor(Math.random() * 3); // adjust scale based on shuffle
-
+			this.species = count; // adjust scale based on shuffle
+			
 			geometry = new THREE.CircleBufferGeometry(this.r); // parameter represents scale
 			// create object with basic material and color based on random species shuffled earlier
 			// color is made up on arbitrary number based on species code
 			this.object = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
-				color: this.species / 3 * 0x00ffff,
+				color: this.species / 3 * 0xff8875,
 				wireframe: false
 			}));
 			this.object.position = position.clone();
@@ -106,7 +106,7 @@
 
 			this.applyBehaviors = function(particles) {
 				var separateForce = this.separate(particles);
-				console.log(this.object.natureCount);
+				// console.log(this.object.natureCount);
 				if(this.object.natureCount == 0) {
 				//sets where particles will move 
 				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, window.innerHeight / 2, 0));
