@@ -75,7 +75,7 @@
 			// create object with basic material and color based on random species shuffled earlier
 			// color is made up on arbitrary number based on species code
 			this.object = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
-				color: this.species / 3 * 0xff8875,
+				color: this.species / 3 * 0x00ff9d,
 				wireframe: false
 			}));
 			this.object.position = position.clone();
@@ -109,10 +109,13 @@
 				// console.log(this.object.natureCount);
 				if(this.object.natureCount == 0) {
 				//sets where particles will move 
-				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, 20, 0));
-				} else if (this.object.natureCount > 0){
-				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2 * -1 / this.object.natureCount , 20, 0));
-				} 
+				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2 * -1, 100, 0));
+				} else if (this.object.natureCount > 0 && this.object.natureCount < 6){
+				// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+				var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
+				} else {
+				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, 100, 0));
+				}
 				
 				// relationship between separation and seeking
 				separateForce.multiplyScalar(10); // double separation
