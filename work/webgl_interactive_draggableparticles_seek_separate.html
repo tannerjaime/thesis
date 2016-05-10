@@ -109,9 +109,9 @@
 				// console.log(this.object.natureCount);
 				if(this.object.natureCount == 0) {
 				//sets where particles will move 
-				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, window.innerHeight / 2, 0));
+				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, 20, 0));
 				} else if (this.object.natureCount > 0){
-				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 8, window.innerHeight / 8, 0));
+				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2 * -1 / this.object.natureCount , 20, 0));
 				} 
 				
 				// relationship between separation and seeking
