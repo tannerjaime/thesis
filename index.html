@@ -27,7 +27,7 @@
 
 	<!--<h4 class="title" onClick="test()"> Select Here To Search Species </h4>-->
 	<ul class="title">
-		<li>SELECT BELOW TO SEARCH SPECIES
+		<li>TO SEARCH SPECIES
 			<ul id="list">
 				<li class="active">Animalia</li>
 
@@ -35,7 +35,14 @@
 			</ul>
 		</li>
 	</ul>
-	<span class="kingdom"> Kingdom</span> <span class="kingdom">Animalia</span>
+	<!--info-->
+	<div id="info">
+		<span class="tax">Animalia</span>
+		<span class="kingdom"> Kingdom</span> 
+	</div>
+	
+	<div id="nature">Nature</div>
+	
 
 	<!--<span class="phylum"> Phylum </span> <span>Cnidaria</span>-->
 	<script>
@@ -143,14 +150,14 @@
 				// console.log(this.object.natureCount);
 				if (this.object.natureCount == 0) {
 					//sets where particles will move 
-					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2 * -1, 100, 0));
+					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 3 * -1, 100, 0));
 				}
-				else if (this.object.natureCount > 0 && this.object.natureCount < 6) {
-					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-					var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
-				}
+				// else if (this.object.natureCount > 0 && this.object.natureCount < 6) {
+				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+				// 	var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
+				// }
 				else {
-					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, 100, 0));
+					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 3, 100, 0));
 				}
 
 				// relationship between separation and seeking
@@ -331,7 +338,7 @@
 			stats = new Stats();
 			stats.domElement.style.position = 'absolute';
 			stats.domElement.style.top = '0px';
-			container.appendChild(stats.domElement);
+			// container.appendChild(stats.domElement);
 
 			renderer.domElement.addEventListener('mousemove', onDocumentMouseMove, false);
 			renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
@@ -372,7 +379,10 @@
 
 				if (intersects.length > 0) {
 					//when clicked, do this
-					// console.log(SELECTED.species);
+					
+					// set some output text
+					// document.getElementById("nature").innerHTML="";
+					
 					SELECTED.material.color.setHex(0xff0000);
 					SELECTED.position.copy(intersects[0].point.sub(offset));
 
@@ -391,6 +401,16 @@
 					INTERSECTED = intersects[0].object;
 					INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
 					INTERSECTED.material.color.setHex(0X444444);
+					
+					// document.getElementById("kingdom").innerHTML= INTERSECTED.object.kingdom;
+
+
+					if (INTERSECTED.natureCount > 0)
+						document.getElementById("nature").innerHTML="<a href='"+INTERSECTED.natureArticles+"'>"+INTERSECTED.natureCount+"  refereence article " +"</a>";
+					else
+						document.getElementById("nature").innerHTML="";
+					
+					// console.log("intersects");
 
 					plane.position.copy(INTERSECTED.position);
 					plane.lookAt(camera.position);
