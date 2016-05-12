@@ -1,7 +1,24 @@
+#nature {
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    text-align: right;
+    font-size: 1.5em;
+}
+
 .title {
-    height: 30px;
+    /*height: 30px;*/
     top: 40%;
     position: absolute;
+    text-align: center;
+    font-size: 1.5em;
+    
+}
+
+li {
+    opacity: .9;
+    list-style-type: none;
+    margin-left: .5em;
 }
 
 .three {
@@ -31,9 +48,10 @@
 /*    position: absolute;*/
 /*}*/
 
-.tax {
+#info {
     font-weight: bold;
     height: 30px;
     top: 55%;
     position: absolute;
+    visibility: hidden;
 }
