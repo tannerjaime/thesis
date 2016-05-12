@@ -1,0 +1,39 @@
+.title {
+    height: 30px;
+    top: 40%;
+    position: absolute;
+}
+
+.three {
+    position: relative;
+}
+
+/*.kingdom {*/
+/*    font-weight: bold;*/
+/*    height: 30px;*/
+/*    top: 45%;*/
+/*    position: absolute;*/
+/*    display: inline;*/
+/*}*/
+
+/*.phylum {*/
+/*    font-weight: bold;*/
+/*    height: 30px;*/
+/*    top: 55%;*/
+/*    position: absolute;*/
+/*}*/
+
+
+/*.tax, .tax .inline-p {*/
+/*    font-weight: bold;*/
+/*    height: 30px;*/
+/*    top: 45%;*/
+/*    position: absolute;*/
+/*}*/
+
+.tax {
+    font-weight: bold;
+    height: 30px;
+    top: 55%;
+    position: absolute;
+}

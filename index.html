@@ -16,12 +16,28 @@
 </head>
 
 <body>
+	<link href="style.css" rel="stylesheet">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="build/three.min.js"></script>
 	<script src="js/controls/TrackballControls.js"></script>
 	<script src="js/libs/stats.min.js"></script>
 	<script src="Cnidaria.json"></script>
 
+
+	<!--<h4 class="title" onClick="test()"> Select Here To Search Species </h4>-->
+	<ul class="title">
+		<li>SELECT BELOW TO SEARCH SPECIES
+			<ul id="list">
+				<li class="active">Animalia</li>
+
+				<li class="active" onClick="phylumSelected()">Cnidaria</li>
+			</ul>
+		</li>
+	</ul>
+	<span class="kingdom"> Kingdom</span> <span class="kingdom">Animalia</span>
+
+	<!--<span class="phylum"> Phylum </span> <span>Cnidaria</span>-->
 	<script>
 		// The Nature of Code
 		// Daniel Shiffman
@@ -30,6 +46,10 @@
 
 		var ps;
 		var selected = [];
+		// levels available
+		var hierarchy = ["kingdom", "phylum", "class", "order", "family", "genus", "species", "sciName"];
+		// current level
+		var currentLevel = 3;
 
 		var ParticleSystem = function(position) {
 			this.origin = new THREE.Vector3(0, 0, 0);
@@ -42,14 +62,25 @@
 			this.run = function() {
 				for (var i = 0; i < this.particles.length; i++) {
 					var p = this.particles[i];
+					if (p.lifespan > 0) {
 					p.applyBehaviors(this.particles);
 					p.update();
+					}
 					// apply lifespan, or not
-				// 	if (p.isDead()) {
-				// 	 this.particles.splice(i, 1);
-				// 	}
+					// 	if (p.isDead()) {
+					// 	 this.particles.splice(i, 1);
+					// 	}
 				}
 			};
+
+			this.clear = function() {
+				for (var i = 0; i < this.particles.length; i++) {
+					scene.remove(this.particles.object);
+					this.particles.remove();
+					this.particles.splice(i, 1);
+					this.objects.splice(i, 1);
+				}
+			}
 
 			// A function to apply a force to all Particles
 			this.applyForce = function(f) {
@@ -63,7 +94,7 @@
 		var Particle = function(position, k, p, c, o, f, g, s, sn, count, link, title) {
 			this.acceleration = new THREE.Vector3(0, 0, 0);
 			this.velocity = new THREE.Vector3(0, 0, 0);
-			this.lifespan = 20.0;
+			this.lifespan = 500.0;
 
 			this.r = 10;
 			this.maxspeed = 3; // Maximum speed
@@ -71,7 +102,7 @@
 
 			// throw the dice to simulate a specific species from the db
 			this.species = count; // adjust scale based on shuffle
-			
+
 			geometry = new THREE.CircleBufferGeometry(this.r); // parameter represents scale
 			// create object with basic material and color based on random species shuffled earlier
 			// color is made up on arbitrary number based on species code
@@ -81,7 +112,7 @@
 			}));
 			this.object.position = position.clone();
 			this.object.kingdom = k;
-			this.object.phylum= p;
+			this.object.phylum = p;
 			this.object.class = c;
 			this.object.order = o;
 			this.object.family = f;
@@ -90,6 +121,8 @@
 			this.object.sciName = sn;
 			this.object.natureCount = count;
 			this.object.natureArticles = (JSON.stringify(link));
+			// make object selectable by name
+			this.object.name = this.object.sciName;
 			// this.object.natureLink = [];
 			// this.object.natureTitle = [];
 			// for (var i = 0; i < link.length; i++){
@@ -108,16 +141,18 @@
 			this.applyBehaviors = function(particles) {
 				var separateForce = this.separate(particles);
 				// console.log(this.object.natureCount);
-				if(this.object.natureCount == 0) {
-				//sets where particles will move 
-				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2 * -1, 100, 0));
-				} else if (this.object.natureCount > 0 && this.object.natureCount < 6){
-				// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-				var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
-				} else {
-				var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, 100, 0));
+				if (this.object.natureCount == 0) {
+					//sets where particles will move 
+					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2 * -1, 100, 0));
 				}
-				
+				else if (this.object.natureCount > 0 && this.object.natureCount < 6) {
+					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+					var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
+				}
+				else {
+					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, 100, 0));
+				}
+
 				// relationship between separation and seeking
 				separateForce.multiplyScalar(10); // double separation
 				seekForce.multiplyScalar(5); // than seek force
@@ -191,7 +226,7 @@
 				// Differentiate species through z offset
 				// this.object.position.setZ(this.species * 100);
 				// lifespan is for making particles expire
-				// this.lifespan -= 1;
+				this.lifespan -= 1;
 			};
 
 			// Method to display
@@ -209,6 +244,12 @@
 					return false;
 				}
 			};
+
+			this.remove = function() {
+				var selectedObject = scene.getObjectByName(this.object.name);
+    			scene.remove( selectedObject );
+				// scene.remove(this.object);
+			}
 		};
 
 		// Threejs example draggable box
@@ -299,7 +340,9 @@
 			//
 
 			window.addEventListener('resize', onWindowResize, false);
-// 			makeParticles();
+
+			// initial selection
+			selection();
 		}
 
 
@@ -329,7 +372,7 @@
 
 				if (intersects.length > 0) {
 					//when clicked, do this
-					console.log(SELECTED.species);
+					// console.log(SELECTED.species);
 					SELECTED.material.color.setHex(0xff0000);
 					SELECTED.position.copy(intersects[0].point.sub(offset));
 
@@ -366,19 +409,18 @@
 				container.style.cursor = 'auto';
 
 			}
-			
-			
+
+
 
 		}
 
 		function onDocumentMouseDown(event) {
-		    
-		    selection();
+
 
 			console.log("number of objects: " + objects.length);
-			console.log(objects);
+			// console.log(objects);
 			event.preventDefault();
-			
+
 
 			// send out a virtual ray to catch intersection objects so we can drag and select them
 			raycaster.setFromCamera(mouse, camera);
@@ -391,6 +433,9 @@
 				controls.enabled = false;
 
 				SELECTED = intersects[0].object;
+
+				selection(SELECTED, currentLevel);
+
 
 				var intersects = raycaster.intersectObject(plane);
 
@@ -441,9 +486,9 @@
 			// var gravity = new THREE.Vector3( 0, 0.01, 0);
 			// ps.applyForce(gravity);
 			ps.run();
-			
-			
-		
+
+
+
 			requestAnimationFrame(animate);
 
 			render();
@@ -451,37 +496,63 @@
 
 		}
 
-// 		function makeParticles() {
-// // 			for (var i = 0; i < selected.length; i ++){
-// // 			if (cnidaria[i].classification.order == 'Alcyonacea') {
-// 				// if (ps.particles.length < 500)
-// 				// console.log("this is current particle"  + Particle);
-// // 			}
-// // 			else {
-// // 				console.log("no! ");
-// // 			}
-// // 			}
-			
-			
-// 		}
-		
-		//when click, look through all of the ORDERS for the order Antipatharia in the object Cnidaria and push them into an array, t
-		function selection() {
-		for (var i = 0; i < cnidaria.length; i ++){
-			if (cnidaria[i].classification.order == 'Antipatharia') {
-				// if (ps.particles.length < 500)
-				
-				selected.push(cnidaria[i]);
-				ps.addParticle(cnidaria[i].classification.kingdom, cnidaria[i].classification.phylum, cnidaria[i].classification.class, cnidaria[i].classification.order, cnidaria[i].classification.family, cnidaria[i].classification.genus, cnidaria[i].species, cnidaria[i].sciName, cnidaria[i].natureCount, cnidaria[i].natureArticles, cnidaria[i].natureTitles );
+		// 		function makeParticles() {
+		// // 			for (var i = 0; i < selected.length; i ++){
+		// // 			if (cnidaria[i].classification.order == 'Alcyonacea') {
+		// 				// if (ps.particles.length < 500)
+		// 				// console.log("this is current particle"  + Particle);
+		// // 			}
+		// // 			else {
+		// // 				console.log("no! ");
+		// // 			}
+		// // 			}
 
-				// console.log("this is current particle"  + Particle);
+
+		// 		}
+
+		//when click, look through all of the ORDERS for the order Antipatharia in the object Cnidaria and push them into an array, t
+		function selection(obj) {
+			
+			var thisLevel = hierarchy[currentLevel];
+			if (obj != undefined) {
+				currentLevel++;
+				console.log(obj);
+				console.log("level no: " + currentLevel + " | thisLevel: " + thisLevel + " | thisLevel Obj: " + obj[thisLevel]);
+				sel = obj[thisLevel];
 			}
 			else {
-				console.log("not working");
+				sel = 'Antipatharia';
 			}
+
+			// make selection
+			for (var i = 0; i < cnidaria.length; i++) {
+				if (cnidaria[i].classification[thisLevel] == sel) {
+					// if (ps.particles.length < 500)
+
+					selected.push(cnidaria[i]);
+
+					// console.log("this is current particle"  + Particle);
+				}
+				// else {
+				// 	console.log("not found");
+				// }
 			}
+
+
+			if (selected.length > 0) {
+				console.log("found " + selected.length + " matches...");
+				// clear particles
+				// ps.clear();
+
+				// make particles from selection
+				for (var i = 0; i < selected.length; i++) {
+					ps.addParticle(selected[i].classification.kingdom, selected[i].classification.phylum, selected[i].classification.class, selected[i].classification.order, selected[i].classification.family, selected[i].classification.genus, selected[i].species, selected[i].sciName, selected[i].natureCount, selected[i].natureArticles, selected[i].natureTitles);
+				}
+				
+			}
+
+
 			console.log("Found order length is" + selected.length);
-// 			makeParticles();
 		}
 
 
@@ -492,6 +563,52 @@
 			renderer.render(scene, camera);
 
 		}
+
+		function phylumSelected() {
+
+			var ul = document.getElementById("list");
+			var li = document.createElement("li");
+			li.appendChild(document.createTextNode("Anthozoa"));
+			ul.appendChild(li);
+			li.setAttribute("class", "class");
+
+
+
+			var li2 = document.createElement("li");
+			li2.appendChild(document.createTextNode("Cubozoa"));
+			ul.appendChild(li2);
+			li2.setAttribute("class", "class");
+
+
+
+			var li3 = document.createElement("li");
+			li3.appendChild(document.createTextNode("Hydrozoa"));
+			ul.appendChild(li3);
+			li3.setAttribute("class", "class");
+
+
+
+			var li4 = document.createElement("li");
+			li4.appendChild(document.createTextNode("Scyphozoa"));
+			ul.appendChild(li4);
+			li4.setAttribute("class", "class");
+
+			var li5 = document.createElement("li");
+			li5.appendChild(document.createTextNode("Saurozoa"));
+			ul.appendChild(li5);
+			li5.setAttribute("class", "class");
+
+			$('li.class').click(function() {
+				$(this).addClass('active');
+				$(this).siblings("li:not(.active)").remove();
+				$(function() {
+					var x = $("li").last().html();
+					console.log(x);
+				});
+			});
+		}
+		
+		//how do i take x, search through object, 
 	</script>
 
 </body>
