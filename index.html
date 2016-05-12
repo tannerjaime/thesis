@@ -26,23 +26,27 @@
 
 
 	<!--<h4 class="title" onClick="test()"> Select Here To Search Species </h4>-->
-	<ul class="title">
-		<li>TO SEARCH SPECIES
-			<ul id="list">
-				<li class="active">Animalia</li>
-
-				<li class="active" onClick="phylumSelected()">Cnidaria</li>
-			</ul>
-		</li>
-	</ul>
+	<!--<ul class="title">-->
+	<!--	<li>TO SEARCH SPECIES-->
+	<!--		<ul id="list">-->
+	<!--			<li class="active">Animalia</li>-->
+	<!--			<li class="active">Cnidaria</li>-->
+	<!--		</ul>-->
+	<!--	</li>-->
+	<!--</ul>-->
 	<!--info-->
 	<div id="info">
-		<span class="tax">Animalia</span>
-		<span class="kingdom"> Kingdom</span> 
+		<p id="kingdom">Kingdom</p>
+		<p id="phylum"> Phylum</p>
+		<p id="class"> Class </p>
+		<p id="order"> Order </p>
+		<p id="family"> Family </p>
+		<p id="genus"> Genus </p>
+		<p id="species"> Species </p>
 	</div>
-	
+
 	<div id="nature">Nature</div>
-	
+
 
 	<!--<span class="phylum"> Phylum </span> <span>Cnidaria</span>-->
 	<script>
@@ -70,8 +74,8 @@
 				for (var i = 0; i < this.particles.length; i++) {
 					var p = this.particles[i];
 					if (p.lifespan > 0) {
-					p.applyBehaviors(this.particles);
-					p.update();
+						p.applyBehaviors(this.particles);
+						p.update();
 					}
 					// apply lifespan, or not
 					// 	if (p.isDead()) {
@@ -254,7 +258,7 @@
 
 			this.remove = function() {
 				var selectedObject = scene.getObjectByName(this.object.name);
-    			scene.remove( selectedObject );
+				scene.remove(selectedObject);
 				// scene.remove(this.object);
 			}
 		};
@@ -379,12 +383,13 @@
 
 				if (intersects.length > 0) {
 					//when clicked, do this
-					
+
 					// set some output text
 					// document.getElementById("nature").innerHTML="";
-					
+
 					SELECTED.material.color.setHex(0xff0000);
 					SELECTED.position.copy(intersects[0].point.sub(offset));
+
 
 				}
 
@@ -394,22 +399,47 @@
 
 			var intersects = raycaster.intersectObjects(objects);
 
+
+
+
 			if (intersects.length > 0) {
 
 				if (INTERSECTED != intersects[0].object) {
 
+
+
+
 					INTERSECTED = intersects[0].object;
 					INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
 					INTERSECTED.material.color.setHex(0X444444);
-					
-					// document.getElementById("kingdom").innerHTML= INTERSECTED.object.kingdom;
 
+
+					// document.getElementById("kingdom").innerHTML= INTERSECTED.kingdom;
+					// console.log(INTERSECTED.kingdom);
+
+
+					// if (INTERSECTED.kingdom != undefined){
+					document.getElementById("kingdom").innerHTML = "" + "Animalia";
+					document.getElementById("phylum").innerHTML = "" + INTERSECTED.phylum;
+					document.getElementById("class").innerHTML = "" + INTERSECTED.class;
+					document.getElementById("order").innerHTML = "" + INTERSECTED.order;
+					document.getElementById("family").innerHTML = "" + INTERSECTED.family;
+					document.getElementById("genus").innerHTML = "" + INTERSECTED.genus;
+					document.getElementById("species").innerHTML = "" + INTERSECTED.species;
+					// }
+
+					// document.getElementById("info").innerHTML="<span id='Kingdom'>" + INTERSECTED.kingdom + "</span>";
+					// document.getElementById("info").innerHTML="<span id='Phylum'>" + INTERSECTED.phylum + "</span>";
+					// document.getElementById("info").innerHTML="<span id='Class'>" + INTERSECTED.class + "</span>";
 
 					if (INTERSECTED.natureCount > 0)
-						document.getElementById("nature").innerHTML="<a href='"+INTERSECTED.natureArticles+"'>"+INTERSECTED.natureCount+"  refereence article " +"</a>";
+						document.getElementById("nature").innerHTML = "<a href='" + INTERSECTED.natureArticles + "'>" + INTERSECTED.natureCount + "  refereence article " + "</a>";
 					else
-						document.getElementById("nature").innerHTML="";
-					
+						document.getElementById("nature").innerHTML = "";
+
+
+
+
 					// console.log("intersects");
 
 					plane.position.copy(INTERSECTED.position);
@@ -454,7 +484,7 @@
 
 				SELECTED = intersects[0].object;
 
-				selection(SELECTED, currentLevel);
+				selection(SELECTED);
 
 
 				var intersects = raycaster.intersectObject(plane);
@@ -532,7 +562,7 @@
 
 		//when click, look through all of the ORDERS for the order Antipatharia in the object Cnidaria and push them into an array, t
 		function selection(obj) {
-			
+
 			var thisLevel = hierarchy[currentLevel];
 			if (obj != undefined) {
 				currentLevel++;
@@ -568,7 +598,7 @@
 				for (var i = 0; i < selected.length; i++) {
 					ps.addParticle(selected[i].classification.kingdom, selected[i].classification.phylum, selected[i].classification.class, selected[i].classification.order, selected[i].classification.family, selected[i].classification.genus, selected[i].species, selected[i].sciName, selected[i].natureCount, selected[i].natureArticles, selected[i].natureTitles);
 				}
-				
+
 			}
 
 
@@ -627,8 +657,8 @@
 				});
 			});
 		}
-		
-		//how do i take x, search through object, 
+
+		//how do i take x, search through object,
 	</script>
 
 </body>
