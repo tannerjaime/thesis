@@ -29,6 +29,7 @@
 		// Simple Particle System
 
 		var ps;
+		var selected = [];
 
 		var ParticleSystem = function(position) {
 			this.origin = new THREE.Vector3(0, 0, 0);
@@ -44,9 +45,9 @@
 					p.applyBehaviors(this.particles);
 					p.update();
 					// apply lifespan, or not
-					//if (p.isDead()) {
-					//  this.particles.splice(i, 1);
-					//}
+				// 	if (p.isDead()) {
+				// 	 this.particles.splice(i, 1);
+				// 	}
 				}
 			};
 
@@ -134,7 +135,7 @@
 			// separate each particle from all neighbors
 			// this is computationally more expensize, because each particle nees to check all the others to determine behaviour
 			this.separate = function(particles) {
-				var desiredseparation = this.r * 3; // separate by 2.5 diameters
+				var desiredseparation = this.r * 5; // separate by 2.5 diameters
 				var sum = new THREE.Vector3(0, 0, 0);
 				var diff = new THREE.Vector3(0, 0, 0);
 				var count = 0;
@@ -298,7 +299,7 @@
 			//
 
 			window.addEventListener('resize', onWindowResize, false);
-			makeParticles();
+// 			makeParticles();
 		}
 
 
@@ -371,10 +372,13 @@
 		}
 
 		function onDocumentMouseDown(event) {
+		    
+		    selection();
 
 			console.log("number of objects: " + objects.length);
 			console.log(objects);
 			event.preventDefault();
+			
 
 			// send out a virtual ray to catch intersection objects so we can drag and select them
 			raycaster.setFromCamera(mouse, camera);
@@ -447,19 +451,37 @@
 
 		}
 
-		function makeParticles() {
-			for (var i = 0; i < cnidaria.length; i ++){
-			if (cnidaria[i].classification.genus == 'Alcyonium') {
+// 		function makeParticles() {
+// // 			for (var i = 0; i < selected.length; i ++){
+// // 			if (cnidaria[i].classification.order == 'Alcyonacea') {
+// 				// if (ps.particles.length < 500)
+// 				// console.log("this is current particle"  + Particle);
+// // 			}
+// // 			else {
+// // 				console.log("no! ");
+// // 			}
+// // 			}
+			
+			
+// 		}
+		
+		//when click, look through all of the ORDERS for the order Antipatharia in the object Cnidaria and push them into an array, t
+		function selection() {
+		for (var i = 0; i < cnidaria.length; i ++){
+			if (cnidaria[i].classification.order == 'Antipatharia') {
 				// if (ps.particles.length < 500)
+				
+				selected.push(cnidaria[i]);
 				ps.addParticle(cnidaria[i].classification.kingdom, cnidaria[i].classification.phylum, cnidaria[i].classification.class, cnidaria[i].classification.order, cnidaria[i].classification.family, cnidaria[i].classification.genus, cnidaria[i].species, cnidaria[i].sciName, cnidaria[i].natureCount, cnidaria[i].natureArticles, cnidaria[i].natureTitles );
+
 				// console.log("this is current particle"  + Particle);
 			}
 			else {
-				console.log("no! ");
+				console.log("not working");
 			}
 			}
-			
-			
+			console.log("Found order length is" + selected.length);
+// 			makeParticles();
 		}
 
 
