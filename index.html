@@ -61,6 +61,7 @@
 		var hierarchy = ["kingdom", "phylum", "class", "order", "family", "genus", "species", "sciName"];
 		// current level
 		var currentLevel = 3;
+		var citationCount = 0;
 
 		var ParticleSystem = function(position) {
 			this.origin = new THREE.Vector3(0, 0, 0);
@@ -84,13 +85,14 @@
 				}
 			};
 
+			// clear particle system
 			this.clear = function() {
+				console.log("clear particle system");
 				for (var i = 0; i < this.particles.length; i++) {
-					scene.remove(this.particles.object);
-					this.particles.remove();
-					this.particles.splice(i, 1);
-					this.objects.splice(i, 1);
+					var p = this.particles[i];
+					p.remove();
 				}
+				objects = [];
 			}
 
 			// A function to apply a force to all Particles
@@ -118,7 +120,7 @@
 			// create object with basic material and color based on random species shuffled earlier
 			// color is made up on arbitrary number based on species code
 			this.object = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
-				color: this.species / 3 * 0x00ff9d,
+				color: (this.species / 6) * 0xff00f9,
 				wireframe: false
 			}));
 			this.object.position = position.clone();
@@ -133,7 +135,7 @@
 			this.object.natureCount = count;
 			this.object.natureArticles = (JSON.stringify(link));
 			// make object selectable by name
-			this.object.name = this.object.sciName;
+			this.object.name = objects.length;
 			// this.object.natureLink = [];
 			// this.object.natureTitle = [];
 			// for (var i = 0; i < link.length; i++){
@@ -143,6 +145,8 @@
 			// Optional shadows
 			// this.object.castShadow = true;
 			// this.object.receiveShadow = true;
+			
+			// console.log("object name" + this.object.name);
 
 			// Add to THREE scene
 			scene.add(this.object);
@@ -257,9 +261,9 @@
 			};
 
 			this.remove = function() {
+				// console.log("removed: " + this.object.name)
 				var selectedObject = scene.getObjectByName(this.object.name);
 				scene.remove(selectedObject);
-				// scene.remove(this.object);
 			}
 		};
 
@@ -342,7 +346,7 @@
 			stats = new Stats();
 			stats.domElement.style.position = 'absolute';
 			stats.domElement.style.top = '0px';
-			// container.appendChild(stats.domElement);
+			container.appendChild(stats.domElement);
 
 			renderer.domElement.addEventListener('mousemove', onDocumentMouseMove, false);
 			renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
@@ -565,7 +569,9 @@
 
 			var thisLevel = hierarchy[currentLevel];
 			if (obj != undefined) {
-				currentLevel++;
+				// check if there is another level, and if so, drill down
+				if (currentLevel < hierarchy.length)
+					currentLevel++;
 				console.log(obj);
 				console.log("level no: " + currentLevel + " | thisLevel: " + thisLevel + " | thisLevel Obj: " + obj[thisLevel]);
 				sel = obj[thisLevel];
@@ -573,38 +579,34 @@
 			else {
 				sel = 'Antipatharia';
 			}
-
+			
+			// reset citation count
+			citationCount = 0;
+			
 			// make selection
 			for (var i = 0; i < cnidaria.length; i++) {
 				if (cnidaria[i].classification[thisLevel] == sel) {
-					// if (ps.particles.length < 500)
 
 					selected.push(cnidaria[i]);
-
-					// console.log("this is current particle"  + Particle);
+					
+					// check this sum
+					if (cnidaria[i].natureCount > 0)
+						citationCount+=parseInt(cnidaria[i].natureCount);
+					
 				}
-				// else {
-				// 	console.log("not found");
-				// }
 			}
-			
-			// if ($(p).ge
-			// $("p").css("background-color");
 
 			if (selected.length > 0) {
-				console.log("found " + selected.length + " matches...");
+				console.log("found " + selected.length + " matches... and " + citationCount + " nature citations");
+				console.log("total objects in memory: " + objects.length);
 				// clear particles
-				// ps.clear();
+				ps.clear();
 
 				// make particles from selection
 				for (var i = 0; i < selected.length; i++) {
 					ps.addParticle(selected[i].classification.kingdom, selected[i].classification.phylum, selected[i].classification.class, selected[i].classification.order, selected[i].classification.family, selected[i].classification.genus, selected[i].species, selected[i].sciName, selected[i].natureCount, selected[i].natureArticles, selected[i].natureTitles);
 				}
-
 			}
-
-
-			console.log("Found order length is" + selected.length);
 		}
 
 
