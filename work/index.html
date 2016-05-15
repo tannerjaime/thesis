@@ -35,6 +35,26 @@
 	<!--	</li>-->
 	<!--</ul>-->
 	<!--info-->
+	<!--<button type="button" id="searchButton" onclick="orderMenu()">search</button>-->
+	<!-- The overlay -->
+	<div id="myNav" class="overlay">
+
+		<!-- Button to close the overlay navigation -->
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+		<!-- Overlay content -->
+		<div class="overlay-content">
+			<a href="#">About</a>
+			<a href="#">Services</a>
+			<a href="#">Clients</a>
+			<a href="#">Contact</a>
+		</div>
+
+	</div>
+
+	<!-- Use any element to open/show the overlay navigation menu -->
+	<span onclick="openNav()">open</span>
+
 	<div id="info">
 		<p id="kingdom">Kingdom</p>
 		<p id="phylum"> Phylum</p>
@@ -45,7 +65,9 @@
 		<p id="species"> Species </p>
 	</div>
 
+	<!--<div id="search"></div>-->
 	<div id="nature">Publications</div>
+	<div id="currentPublications"></div>
 
 
 	<!--<span class="phylum"> Phylum </span> <span>Cnidaria</span>-->
@@ -416,11 +438,6 @@
 					INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
 					INTERSECTED.material.color.setHex(0X444444);
 
-
-					// document.getElementById("kingdom").innerHTML= INTERSECTED.kingdom;
-					// console.log(INTERSECTED.kingdom);
-
-
 					// if (INTERSECTED.kingdom != undefined){
 					document.getElementById("kingdom").innerHTML = "" + "Animalia";
 					document.getElementById("phylum").innerHTML = "" + INTERSECTED.phylum;
@@ -431,29 +448,34 @@
 					document.getElementById("species").innerHTML = "" + INTERSECTED.species;
 					// }
 
-					// document.getElementById("info").innerHTML="<span id='Kingdom'>" + INTERSECTED.kingdom + "</span>";
-					// document.getElementById("info").innerHTML="<span id='Phylum'>" + INTERSECTED.phylum + "</span>";
-					// document.getElementById("info").innerHTML="<span id='Class'>" + INTERSECTED.class + "</span>";
+					//DO I NEED THIS?? removes the groups labeled "current"
 
+					// if ($('#current').length) {
+					// 	$('#current').remove();
+					// }
+					// else {
+					// 	console.log('no myID to remove');
+					// }
 					if (INTERSECTED.natureCount > 0) {
-						if ($('#current').length) {
-							$('#current').remove();
+
+						// container for assembling publications, unsorted list
+						var publicationString = "<ul>\n";
+						for (var a = 0; a < INTERSECTED.natureArticles.length; a++) {
+							document.getElementById("nature").innerHTML = "Number of citations: " + INTERSECTED.natureCount;
+							// assemble html formatted string, list items li 
+							publicationString += "<li>" + INTERSECTED.natureArticles[a] + "</li>\n";
+							// document.getElementById("nature").insertAdjacentHTML('afterend', '<div id=' + "current" + ' href=' + INTERSECTED.natureArticles[a] + '>' + INTERSECTED.natureTitles[a] + '</div>');
 						}
-						else {
-							console.log('no myID to remove');
-						}
-						for (var a = 0; a < INTERSECTED.natureCount.length; a++) {
-						document.getElementById("nature").innerHTML = "<a href='" + INTERSECTED.natureArticles[0] + "'>" + INTERSECTED.natureTitles[0] + "</a>";
-						document.getElementById("nature").insertAdjacentHTML('afterend', '<div id=current href=' + INTERSECTED.natureArticles[0] + '>hi</div>');
-						}
+						// finish off unsorted list
+						publicationString += "</ul>\n";
+						// document.getElementById("nature").appendChild(publicationString);
+						// write string to html element, currently line 48
+						console.log(publicationString);
+						document.getElementById("currentPublications").innerHTML = publicationString;
 					}
 					else {
 						document.getElementById("nature").innerHTML = "";
 					}
-
-
-
-					// console.log("intersects");
 
 					plane.position.copy(INTERSECTED.position);
 					plane.lookAt(camera.position);
@@ -629,51 +651,83 @@
 
 		}
 
-		function phylumSelected() {
-
-			var ul = document.getElementById("list");
-			var li = document.createElement("li");
-			li.appendChild(document.createTextNode("Anthozoa"));
-			ul.appendChild(li);
-			li.setAttribute("class", "class");
 
 
+		// function phylumSelected() {
 
-			var li2 = document.createElement("li");
-			li2.appendChild(document.createTextNode("Cubozoa"));
-			ul.appendChild(li2);
-			li2.setAttribute("class", "class");
+		// 	var ul = document.getElementById("list");
+		// 	var li = document.createElement("li");
+		// 	li.appendChild(document.createTextNode("Anthozoa"));
+		// 	ul.appendChild(li);
+		// 	li.setAttribute("class", "class");
 
 
 
-			var li3 = document.createElement("li");
-			li3.appendChild(document.createTextNode("Hydrozoa"));
-			ul.appendChild(li3);
-			li3.setAttribute("class", "class");
+		// 	var li2 = document.createElement("li");
+		// 	li2.appendChild(document.createTextNode("Cubozoa"));
+		// 	ul.appendChild(li2);
+		// 	li2.setAttribute("class", "class");
 
 
 
-			var li4 = document.createElement("li");
-			li4.appendChild(document.createTextNode("Scyphozoa"));
-			ul.appendChild(li4);
-			li4.setAttribute("class", "class");
+		// 	var li3 = document.createElement("li");
+		// 	li3.appendChild(document.createTextNode("Hydrozoa"));
+		// 	ul.appendChild(li3);
+		// 	li3.setAttribute("class", "class");
 
-			var li5 = document.createElement("li");
-			li5.appendChild(document.createTextNode("Saurozoa"));
-			ul.appendChild(li5);
-			li5.setAttribute("class", "class");
 
-			$('li.class').click(function() {
-				$(this).addClass('active');
-				$(this).siblings("li:not(.active)").remove();
-				$(function() {
-					var x = $("li").last().html();
-					// console.log(x);
-				});
-			});
+
+		// 	var li4 = document.createElement("li");
+		// 	li4.appendChild(document.createTextNode("Scyphozoa"));
+		// 	ul.appendChild(li4);
+		// 	li4.setAttribute("class", "class");
+
+		// 	var li5 = document.createElement("li");
+		// 	li5.appendChild(document.createTextNode("Saurozoa"));
+		// 	ul.appendChild(li5);
+		// 	li5.setAttribute("class", "class");
+
+		// 	$('li.class').click(function() {
+		// 		$(this).addClass('active');
+		// 		$(this).siblings("li:not(.active)").remove();
+		// 		$(function() {
+		// 			var x = $("li").last().html();
+		// 			// console.log(x);
+		// 		});
+		// 	});
+		// }
+
+		// function orderMenu() {
+
+		// 	// document.getElementById("search").className = "fullscreen";
+
+		// 	// $('#search').on('click', function(e) {
+		// 	$('#search').css({
+		// 		width: "100%",
+		// 		height: "100%",
+		// 		margin: "0",
+		// 		border: "none"
+
+		// 	});
+		// 	// });
+
+		// }
+
+
+		// function orderMenu() {
+		// 	div = document.getElementById('tow');
+		// 	div.style.display = "block";
+		// }
+
+		/* Open when someone clicks on the span element */
+		function openNav() {
+			document.getElementById("myNav").style.width = "100%";
 		}
 
-		//how do i take x, search through object,
+		/* Close when someone clicks on the "x" symbol inside the overlay */
+		function closeNav() {
+			document.getElementById("myNav").style.width = "0%";
+		}
 	</script>
 
 </body>
