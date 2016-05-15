@@ -45,7 +45,7 @@
 		<!-- Overlay content -->
 		<div class="overlay-content">
 			<div id="leftLeft">
-				<a href="#">Actiniaria</a>
+				<a id="foo">Actiniaria</a>
 				<a href="#">Alcyonacea</a>
 				<a href="#">Antipatharia</a>
 				<a href="#">Ceriantharia</a>
@@ -420,7 +420,8 @@
 		}
 
 		function onDocumentMouseMove(event) {
-
+			
+			// checkSearch();
 			event.preventDefault();
 
 			mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -524,7 +525,7 @@
 			}
 
 
-
+		
 		}
 
 		function onDocumentMouseDown(event) {
@@ -532,8 +533,8 @@
 
 			// console.log("number of objects: " + objects.length);
 			// console.log(objects);
+			
 			event.preventDefault();
-
 
 			// send out a virtual ray to catch intersection objects so we can drag and select them
 			raycaster.setFromCamera(mouse, camera);
@@ -542,18 +543,17 @@
 
 			// if we found intersection objects
 			if (intersects.length > 0) {
-
+				
 				controls.enabled = false;
 
 				SELECTED = intersects[0].object;
 
-				selection(SELECTED);
+				// selection(SELECTED);
 
 
 				var intersects = raycaster.intersectObject(plane);
 
 				if (intersects.length > 0) {
-
 					offset.copy(intersects[0].point).sub(plane.position);
 
 				}
@@ -561,6 +561,7 @@
 				container.style.cursor = 'move';
 
 			}
+
 
 		}
 
@@ -580,6 +581,7 @@
 			}
 
 			container.style.cursor = 'auto';
+					
 
 		}
 
@@ -611,14 +613,15 @@
 
 
 		//when click, look through all of the ORDERS for the order Antipatharia in the object Cnidaria and push them into an array, t
-		function selection(obj) {
+		function selection(order) {
 
-			var thisLevel = hierarchy[currentLevel];
-			if (obj != undefined) {
-				currentLevel++;
-				console.log(obj);
-				console.log("level no: " + currentLevel + " | thisLevel: " + thisLevel + " | thisLevel Obj: " + obj[thisLevel]);
-				sel = obj[thisLevel];
+			// var thisLevel = hierarchy[currentLevel];
+			if (order != undefined) {
+				// currentLevel++;
+				console.log("selection: " + order);
+				// console.log("level no: " + currentLevel + " | thisLevel: " + thisLevel + " | thisLevel Obj: " + obj[thisLevel]);
+				// sel = obj[thisLevel];
+				sel = order;
 			}
 			else {
 				sel = 'Stauromedusae';
@@ -626,18 +629,14 @@
 
 			// make selection
 			for (var i = 0; i < cnidaria.length; i++) {
-				if (cnidaria[i].classification[thisLevel] == sel) {
+				if (cnidaria[i].classification.order == sel) {
 					// if (ps.particles.length < 500)
 
 					selected.push(cnidaria[i]);
 
-					// console.log("this is current particle"  + Particle);
 				}
-				// else {
-				// 	console.log("not found");
-				// }
-			}
 
+			}
 			// if ($(p).ge
 			// $("p").css("background-color");
 
@@ -747,6 +746,7 @@
 		// 	div.style.display = "block";
 		// }
 
+
 		/* Open when someone clicks on the span element */
 		function openNav() {
 			document.getElementById("myNav").style.width = "100%";
@@ -756,8 +756,27 @@
 		function closeNav() {
 			document.getElementById("myNav").style.width = "0%";
 		}
+
+		// function checkSearch() {
+		// 	document.getElementById('foo').addEventListener('click', fn);
+
+		// 	function fn() {
+		// 		console.log(this.innerHTML);
+		// 		closeNav();
+		// 	}
+		// }
+		
+		$('body').on('click', 'a', function() {
+			// get the content of what's been clicked on
+			var choice = $( this ).text();
+		    console.log(choice);
+		    // use that content to make the selection
+		    selection(choice);
+		    closeNav();
+		});
 	</script>
 
 </body>
 
 </html>
+ 
