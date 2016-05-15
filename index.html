@@ -45,10 +45,10 @@
 		<!-- Overlay content -->
 		<div class="overlay-content">
 			<div id="leftLeft">
-				<a href="#">Actiniaria</a>
+				<a id="foo">Actiniaria</a>
 				<a href="#">Alcyonacea</a>
 				<a href="#">Antipatharia</a>
-				<a id="foo">Ceriantharia</a>
+				<a href="#">Ceriantharia</a>
 				<a href="#">Corallimorpharia</a>
 				<a href="#">Heliolitina</a>
 			</div>
@@ -93,7 +93,6 @@
 	</div>
 
 	<!--<div id="search"></div>-->
-	<div id="currentOrder">Current Order</div>
 	<div id="nature">Publications</div>
 	<div id="currentPublications"></div>
 
@@ -421,7 +420,8 @@
 		}
 
 		function onDocumentMouseMove(event) {
-
+			
+			checkSearch();
 			event.preventDefault();
 
 			mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -524,14 +524,8 @@
 
 			}
 
-			document.getElementById('foo').addEventListener('click', fn);
 
-			function fn() {
-				selection(this.innerHTML);
-				closeNav();
-			}
-
-
+		
 		}
 
 		function onDocumentMouseDown(event) {
@@ -539,8 +533,8 @@
 
 			// console.log("number of objects: " + objects.length);
 			// console.log(objects);
+			
 			event.preventDefault();
-
 
 			// send out a virtual ray to catch intersection objects so we can drag and select them
 			raycaster.setFromCamera(mouse, camera);
@@ -549,7 +543,7 @@
 
 			// if we found intersection objects
 			if (intersects.length > 0) {
-
+				
 				controls.enabled = false;
 
 				SELECTED = intersects[0].object;
@@ -560,7 +554,6 @@
 				var intersects = raycaster.intersectObject(plane);
 
 				if (intersects.length > 0) {
-
 					offset.copy(intersects[0].point).sub(plane.position);
 
 				}
@@ -568,6 +561,7 @@
 				container.style.cursor = 'move';
 
 			}
+
 
 		}
 
@@ -587,6 +581,7 @@
 			}
 
 			container.style.cursor = 'auto';
+					
 
 		}
 
@@ -632,7 +627,6 @@
 				sel = 'Stauromedusae';
 			}
 
-			document.getElementById("currentOrder").innerHTML = "" + sel;
 			// make selection
 			for (var i = 0; i < cnidaria.length; i++) {
 				if (cnidaria[i].classification.order == sel) {
@@ -760,6 +754,15 @@
 		/* Close when someone clicks on the "x" symbol inside the overlay */
 		function closeNav() {
 			document.getElementById("myNav").style.width = "0%";
+		}
+
+		function checkSearch() {
+			document.getElementById('foo').addEventListener('click', fn);
+
+			function fn() {
+				console.log(this.innerHTML);
+				closeNav();
+			}
 		}
 	</script>
 
