@@ -421,7 +421,7 @@
 
 		function onDocumentMouseMove(event) {
 			
-			checkSearch();
+			// checkSearch();
 			event.preventDefault();
 
 			mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -618,7 +618,7 @@
 			// var thisLevel = hierarchy[currentLevel];
 			if (order != undefined) {
 				// currentLevel++;
-				console.log(order);
+				console.log("selection: " + order);
 				// console.log("level no: " + currentLevel + " | thisLevel: " + thisLevel + " | thisLevel Obj: " + obj[thisLevel]);
 				// sel = obj[thisLevel];
 				sel = order;
@@ -746,6 +746,7 @@
 		// 	div.style.display = "block";
 		// }
 
+
 		/* Open when someone clicks on the span element */
 		function openNav() {
 			document.getElementById("myNav").style.width = "100%";
@@ -756,16 +757,26 @@
 			document.getElementById("myNav").style.width = "0%";
 		}
 
-		function checkSearch() {
-			document.getElementById('foo').addEventListener('click', fn);
+		// function checkSearch() {
+		// 	document.getElementById('foo').addEventListener('click', fn);
 
-			function fn() {
-				console.log(this.innerHTML);
-				closeNav();
-			}
-		}
+		// 	function fn() {
+		// 		console.log(this.innerHTML);
+		// 		closeNav();
+		// 	}
+		// }
+		
+		$('body').on('click', 'a', function() {
+			// get the content of what's been clicked on
+			var choice = $( this ).text();
+		    console.log(choice);
+		    // use that content to make the selection
+		    selection(choice);
+		    closeNav();
+		});
 	</script>
 
 </body>
 
 </html>
+ 
