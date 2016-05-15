@@ -85,13 +85,14 @@
 			};
 
 			this.clear = function() {
+				console.log("clear particle system");
 				for (var i = 0; i < this.particles.length; i++) {
-					scene.remove(this.particles.object);
-					this.particles.remove();
-					this.particles.splice(i, 1);
-					this.objects.splice(i, 1);
+					var p = this.particles[i];
+					p.remove();
 				}
+				objects = [];
 			}
+
 
 			// A function to apply a force to all Particles
 			this.applyForce = function(f) {
@@ -131,13 +132,13 @@
 			this.object.species = s;
 			this.object.sciName = sn;
 			this.object.natureCount = count;
-			this.object.natureArticles = (JSON.parse(link));
+
+			this.object.natureArticles = link;
+			this.object.natureTitles = title;
 			// make object selectable by name
 			this.object.name = this.object.sciName;
 			// this.object.natureLink = [];
-			var natureTitle = [];
-			natureTitle.push(JSON.parse(title));
-			this.object.natureTitles.push(natureTitle);
+			// this.object.natureTitles.push(natureTitle);
 			// for (var i = 0; i < link.length; i++){
 			// this.object.natureLink.push(link);
 			// this.object.natureTitle.push(title);
@@ -435,12 +436,16 @@
 					// document.getElementById("info").innerHTML="<span id='Class'>" + INTERSECTED.class + "</span>";
 
 					if (INTERSECTED.natureCount > 0) {
-						// for (var a = 0; a < INTERSECTED.natureCount.length; a++) {
-							document.getElementById("nature").innerHTML = "<a href='" + INTERSECTED.natureArticles[0] + "'>" + "cat" +  "</a>";
-							console.log(typeof INTERSECTED.natureArticles);
-							// document.getElementById("nature").insertAdjacentHTML('afterend', "<div class=" + "publications" +"> <a href='" + INTERSECTED.natureArticles[a] + "'>" + INTERSECTED.natureTitles[a] + "</div>");
-							
-						// }
+						if ($('#current').length) {
+							$('#current').remove();
+						}
+						else {
+							console.log('no myID to remove');
+						}
+						for (var a = 0; a < INTERSECTED.natureCount.length; a++) {
+						document.getElementById("nature").innerHTML = "<a href='" + INTERSECTED.natureArticles[0] + "'>" + INTERSECTED.natureTitles[0] + "</a>";
+						document.getElementById("nature").insertAdjacentHTML('afterend', '<div id=current href=' + INTERSECTED.natureArticles[0] + '>hi</div>');
+						}
 					}
 					else {
 						document.getElementById("nature").innerHTML = "";
@@ -475,7 +480,7 @@
 		function onDocumentMouseDown(event) {
 
 
-			console.log("number of objects: " + objects.length);
+			// console.log("number of objects: " + objects.length);
 			// console.log(objects);
 			event.preventDefault();
 
@@ -587,13 +592,26 @@
 			// $("p").css("background-color");
 
 			if (selected.length > 0) {
-				console.log("found " + selected.length + " matches...");
+				// console.log("found " + selected.length + " matches...");
 				// clear particles
-				// ps.clear();
+				ps.clear();
 
 				// make particles from selection
+
 				for (var i = 0; i < selected.length; i++) {
-					ps.addParticle(selected[i].classification.kingdom, selected[i].classification.phylum, selected[i].classification.class, selected[i].classification.order, selected[i].classification.family, selected[i].classification.genus, selected[i].species, selected[i].sciName, selected[i].natureCount, selected[i].natureArticles, selected[i].natureTitles);
+					var link, title;
+
+					if (selected[i].natureCount > 0) {
+						link = selected[i].natureArticles;
+						title = selected[i].natureTitles;
+					}
+					else {
+						link = "NaN";
+						title = "NaN";
+					}
+					// console.log(title);
+					ps.addParticle(selected[i].classification.kingdom, selected[i].classification.phylum, selected[i].classification.class, selected[i].classification.order, selected[i].classification.family, selected[i].classification.genus, selected[i].species, selected[i].sciName, selected[i].natureCount, link, title);
+
 				}
 
 			}
@@ -650,7 +668,7 @@
 				$(this).siblings("li:not(.active)").remove();
 				$(function() {
 					var x = $("li").last().html();
-					console.log(x);
+					// console.log(x);
 				});
 			});
 		}
