@@ -168,6 +168,10 @@ li {
 #openNav #exploreOrders {
     position: absolute;
     text-align: center;
+    /*left: 30%;*/
+    top: 10%;
+    width: 100%;
+    height: 10%;
     margin-top: 30px;
     font-family: 'tofinoBold';
     font-size: 0.02em;
@@ -191,7 +195,7 @@ li {
     top: 0;
     background-color: rgb(255, 255, 255);
     /* Black fallback color */
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.85);
     /* Black w/opacity */
     overflow-x: hidden;
     /* Disable horizontal scroll */
@@ -330,7 +334,7 @@ li {
 
 .overlay a:hover,
 .overlay a:focus {
-    color: #B6B6B6;
+    color: #CCCCCC;
 }
 
 
