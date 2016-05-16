@@ -1,9 +1,36 @@
+@font-face {
+  font-family: 'TofinoBlack';
+  src: url('TofinoBlack.otf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'TofinoBold';
+  src: url('TofinoBold.otf');
+}
+
+@font-face {
+  font-family: 'TofinoBook';
+  src: url('TofinoBook.otf');
+}
+
+@font-face {
+  font-family: 'TofinoLight';
+  src: url('TofinoLight.otf');
+}
+
+@font-face {
+  font-family: 'TofinoMedium';
+  src: url('TofinoMedium.otf');
+}
+
+
 .publications {
     position: absolute;
     right: 10%;
     top: 20%;
     text-align: right;
     font-size: 1.5em;
+    color: #E1EBF1;
 }
 
 .title {
@@ -12,16 +39,19 @@
     position: absolute;
     text-align: center;
     font-size: 1.5em;
+        color: #E1EBF1;
 }
 
 li {
     opacity: .9;
     list-style-type: none;
     margin-left: .5em;
+        color: #E1EBF1;
 }
 
 .three {
     position: relative;
+        color: #E1EBF1;
 }
 
 
@@ -90,6 +120,7 @@ li {
     right: 0%;
     width: 20%;
     /*visibility: hidden;*/
+        color: #E1EBF1;
 }
 
 #nature {
@@ -99,6 +130,7 @@ li {
     width: 20%;
     text-align: left;
     font-size: 1.3em;
+        color: #E1EBF1;
 }
 
 #currentPublications {
@@ -108,36 +140,17 @@ li {
     width: 20%;
     text-align: left;
     font-size: 1em;
+        color: #E1EBF1;
 }
 
-/*#currentOrder {*/
-/*    position: absolute;*/
-/*    right: 0%;*/
-/*    top: 10%;*/
-/*    width: 20%;*/
-/*    text-align: left;*/
-/*    font-size: 1.9em; */
-    
-/*}*/
-
-/*#search {*/
-    /*font-weight: bold;*/
-/*    font-size: 1.3em;*/
-/*    height: 30px;*/
-/*    top: 10%;*/
-/*    position: absolute;*/
-/*    right: 0%;*/
-/*    width: 8%;*/
-/*}*/
-
-/*#fullscreen {*/
-/*    background-color: rgba(255,0,0,0.3);*/
-/*    position: absolute;*/
-/*    top: 0%;*/
-/*    left: 0%;*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*}*/
+#line{
+    position: absolute;
+    top: 85%;
+    left: 20%;
+    width: 50%;
+    border: 1px solid #000;
+        color: #E1EBF1;
+}
 
 /* The Overlay (background) */
 .overlay {
@@ -148,8 +161,8 @@ li {
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    background-color: rgb(255,255,255); /* Black fallback color */
+    background-color: rgba(255,255,255, 0.95); /* Black w/opacity */
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
@@ -157,44 +170,68 @@ li {
 /* Position the content inside the overlay */
 .overlay-content {
     position: relative;
-    top: 25%; /* 25% from the top */
-    width: 100%; /* 100% width */
+    top: 0%; /* 25% from the top */
+    width: 100%;
+        height: 90%;/* 100% width */
     text-align: center; /* Centered text/links */
     margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    color: #666666;
 }
+
+.overlay-content p {
+    position: absolute;
+    top: 19%;
+    height: 10%;
+    width: 35%;
+    left: 33%;
+    text-align: left;
+    font-family: 'tofinoBook';
+    font-size: 1.063em;
+}
+
+.overlay-content h1 {
+    position: absolute;
+    top: 25%;
+    height: 10%;
+    width: 30%;
+    left: 35%;
+    text-align: center;
+    font-family: 'tofino';
+}
+
 
 .overlay-content #leftLeft {
     position: relative;
-    top: 25%; /* 25% from the top */
+    top: 40%; /* 25% from the top */
     width: 30%; /* 100% width */
-    left: 5%;
+    left: 16%;
     text-align: center; /* Centered text/links */
     margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
 
 .overlay-content #leftMid {
     position: absolute;
-    top: 0%; /* 25% from the top */
+    top: 40%; /* 25% from the top */
     width: 10%; /* 100% width */
-    left: 35%;
+    left: 38%;
     text-align: center; /* Centered text/links */
     margin-top: 0px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
 
 .overlay-content #rightMid {
     position: absolute;
-    top: 0%; /* 25% from the top */
+    top: 40%; /* 25% from the top */
     width: 10%; /* 100% width */
-    left: 55%;
+    left: 50%;
     text-align: center; /* Centered text/links */
     margin-top: 0px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
 
 .overlay-content #rightRight {
     position: absolute;
-    top: 0%; /* 25% from the top */
+    top: 40%; /* 25% from the top */
     width: 10%; /* 100% width */
-    left: 75%;
+    left: 62%;
     text-align: center; /* Centered text/links */
     margin-top: 0px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
@@ -207,14 +244,14 @@ li {
     padding: 8px;
     text-decoration: none;
     font-size: 18px;
-    color: #818181;
+    color: #666666;
     display: block; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
 }
 
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
+    color: #B6B6B6;
 }
 
 /* Position the close button (top right corner) */
@@ -234,3 +271,5 @@ li {
         right: 35px;
     }
 }
+
+

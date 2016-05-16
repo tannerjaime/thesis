@@ -8,7 +8,7 @@
 	<style>
 		body {
 			font-family: Monospace;
-			background-color: #f0f0f0;
+			background-color: #010C13;
 			margin: 0px;
 			overflow: hidden;
 		}
@@ -44,6 +44,8 @@
 
 		<!-- Overlay content -->
 		<div class="overlay-content">
+			<p>A taxonomic order is a scientific grouping of related organisms. Some examples of taxonomic orders are primates, rodents, and pine.</p>
+			<h1>SELECT AN <b>ORDER</b> TO EXPLORE</h1>
 			<div id="leftLeft">
 				<a id="foo">Actiniaria</a>
 				<a href="#">Alcyonacea</a>
@@ -95,7 +97,7 @@
 	<!--<div id="search"></div>-->
 	<div id="nature">Publications</div>
 	<div id="currentPublications"></div>
-
+	<hr id="line">
 
 	<!--<span class="phylum"> Phylum </span> <span>Cnidaria</span>-->
 	<script>
@@ -109,9 +111,7 @@
 		// levels available
 		var hierarchy = ["kingdom", "phylum", "class", "order", "family", "genus", "species", "sciName"];
 		var oders = ["Actiniaria", "Alcyonacea", "Antipatharia", "Ceriantharia", "Corallimorpharia", "Heliolitina", "Helioporacea", "Pennatulacea", "Scleractinia", "Zoantharia", "Chirodropida", "Cubomedusae", "Actinulida", "Anthoathecata", "Leptothecata", "Limnomedusae", "Narcomedusae", "Siphonophorae", "Trachymedusae", "Coronatae", "Rhizostomeae", "Semaeostomeae", "Stauromedusae"];
-		// current level
-		var currentLevel = 3;
-
+		
 		var ParticleSystem = function(position) {
 			this.origin = new THREE.Vector3(0, 0, 0);
 			this.particles = [];
@@ -126,7 +126,7 @@
 					if (p.lifespan > 0) {
 						p.applyBehaviors(this.particles);
 						p.update();
-					}
+					} 
 					// apply lifespan, or not
 					// 	if (p.isDead()) {
 					// 	 this.particles.splice(i, 1);
@@ -156,20 +156,38 @@
 		var Particle = function(position, k, p, c, o, f, g, s, sn, count, link, title) {
 			this.acceleration = new THREE.Vector3(0, 0, 0);
 			this.velocity = new THREE.Vector3(0, 0, 0);
-			this.lifespan = 500.0; //how many frames they will move for 
+			this.lifespan = 2000.0; //how many frames they will move for 
 
 			this.r = 10;
 			this.maxspeed = 3; // Maximum speed
 			this.maxforce = 0.2; // Maximum steering force
 
 			// throw the dice to simulate a specific species from the db
-			this.species = count; // adjust scale based on shuffle
+			// this.species = count; // adjust scale based on shuffle
+			if (count == 0){
+				this.species = 0x4B4E6A;
+			} else if (count == 1) {
+				this.species = 0x395DAE;
+			} else if (count == 2) {
+				this.species = 0x219ED9;
+			} else if (count == 3) {
+				this.species = 0x0FD0EF;
+			} else if (count == 4) {
+				this.species = 0x04F1FB;
+			} else if (count == 5) {
+				this.species = 0x04F1FB;
+			} else if (count == 6) {
+				this.species = 0xA0E1E0;
+			} else {
+				this.species = 0xDDF3F3;
+			}
+			
 
 			geometry = new THREE.CircleBufferGeometry(this.r); // parameter represents scale
 			// create object with basic material and color based on random species shuffled earlier
 			// color is made up on arbitrary number based on species code
 			this.object = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
-				color: this.species / 3 * 0x00ff9d,
+				color: this.species,
 				wireframe: false
 			}));
 			this.object.position = position.clone();
@@ -187,6 +205,7 @@
 			this.object.natureTitles = title;
 			// make object selectable by name
 			this.object.name = this.object.sciName;
+			
 			// this.object.natureLink = [];
 			// this.object.natureTitles.push(natureTitle);
 			// for (var i = 0; i < link.length; i++){
@@ -207,14 +226,26 @@
 				// console.log(this.object.natureCount);
 				if (this.object.natureCount == 0) {
 					//sets where particles will move 
-					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 3 * -1, 100, 0));
+					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2 * -1, 100, 0));
 				}
-				// else if (this.object.natureCount > 0 && this.object.natureCount < 6) {
-				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-				// 	var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
-				// }
-				else {
+				else if (this.object.natureCount == 1) {
+					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 4 * -1, 100, 0));
+				}
+				else if (this.object.natureCount == 2) {
+					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+					var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
+				}
+				else if (this.object.natureCount == 3) {
+					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 4, 100, 0));
+				}
+				else if (this.object.natureCount == 4) {
+					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
 					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 3, 100, 0));
+				}
+				else {
+					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, 100, 0));
 				}
 
 				// relationship between separation and seeking
@@ -234,7 +265,7 @@
 			// separate each particle from all neighbors
 			// this is computationally more expensize, because each particle nees to check all the others to determine behaviour
 			this.separate = function(particles) {
-				var desiredseparation = this.r * 5; // separate by 2.5 diameters
+				var desiredseparation = this.r * 4; // separate by 2.5 diameters
 				var sum = new THREE.Vector3(0, 0, 0);
 				var diff = new THREE.Vector3(0, 0, 0);
 				var count = 0;
@@ -291,7 +322,7 @@
 				// this.object.position.setZ(this.species * 100);
 				// lifespan is for making particles expire
 				//IF COMMENTED OUT, THEY WILL NEVER EXPIRE
-				this.lifespan -= 1;
+				// this.lifespan -= 1;
 			};
 
 			// Method to display
@@ -338,7 +369,7 @@
 			document.body.appendChild(container);
 
 			camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 10000);
-			camera.position.z = 1000;
+			camera.position.z = 1500;
 
 			controls = new THREE.TrackballControls(camera);
 			controls.rotateSpeed = 1.0;
@@ -677,6 +708,7 @@
 
 			controls.update();
 
+			renderer.setClearColor(new THREE.Color(0x010C13), 1);
 			renderer.render(scene, camera);
 
 		}
