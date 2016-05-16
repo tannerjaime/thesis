@@ -152,7 +152,31 @@ li {
     color: #E1EBF1;
 }
 
+#openNav {
+    /*font-weight: bold;*/
+    /*font-size: 1.3em;*/
+    height: 15%;
+    top: 0%;
+    position: absolute;
+    right: 0%;
+    width: 24%;
+    /*visibility: hidden;*/
+    color: #E1EBF1;
+    background-color: #ffffff;
+}
 
+#openNav #exploreOrders {
+    position: absolute;
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'tofinoBold';
+    font-size: 0.02em;
+    letter-spacing: .028em;
+}
+
+#openNav #exploreOrders b{
+    
+}
 /* The Overlay (background) */
 
 .overlay {
