@@ -90,24 +90,15 @@
 		</div>
 
 		<div id="otherInfo">
-			
+
 			<div id="info">
-				<p id="kingdom">Kingdom</p>
-				<p id="phylum"> Phylum</p>
-				<p id="class"> Class </p>
-				<p id="order"> Order </p>
-				<p id="family"> Family </p>
-				<p id="genus"> Genus </p>
-				<p id="species"> Species </p>
-			</div>
-			<div id="heirarchy">
-				<p id="kingdom">Kingdom</p>
-				<p id="phylum"> Phylum</p>
-				<p id="class"> Class </p>
-				<p id="order"> Order </p>
-				<p id="family"> Family </p>
-				<p id="genus"> Genus </p>
-				<p id="species"> Species </p>
+				<p id="kingdom"> </p>
+				<p id="phylum">  </p>
+				<p id="class">  </p>
+				<p id="order">   </p>
+				<p id="family">   </p>
+				<p id="genus">  </p>
+				<p id="species">   </p>
 			</div>
 		</div>
 		<!--<div id="search"></div>-->
@@ -126,6 +117,8 @@
 
 		var ps;
 		var maxNatureCount = 0;
+		var allCounts = [];
+		var group = [];
 
 		// levels available
 		var hierarchy = ["kingdom", "phylum", "class", "order", "family", "genus", "species", "sciName"];
@@ -259,18 +252,10 @@
 
 				// if (this.object.natureCount == 0) {
 				// 	//sets where particles will move 
-				var seekForce = this.seek(new THREE.Vector3(scale((window.innerWidth / 2 + window.innerWidth / 5) * -1, window.innerWidth / 4, this.object.natureCount, maxNatureCount), 100, 0));
+				var seekForce = this.seek(new THREE.Vector3(scale((window.innerWidth / 2 + window.innerWidth / 3) * -1, window.innerWidth / 2, this.object.natureCount, maxNatureCount), 100, 0));
 
 
-				// WHERE I ATTEMPTED TO MAKE A LINE
-				// var Linematerial = new THREE.LineBasicMaterial({
-				// 	color: 0xffffff
-				// });
-				// var lines = new THREE.Geometry();
-				// lines.vertices.push(new THREE.Vector3((window.innerWidth / 2 + window.innerWidth / 5) * -1, -200, 0));
-				// lines.vertices.push(new THREE.Vector3(window.innerWidth / 4, -200, 0));
-				// var line = new THREE.Line(lines, Linematerial);
-				// scene.add(line);
+
 
 				// }
 				// else if (this.object.natureCount == 1) {
@@ -483,6 +468,15 @@
 
 			window.addEventListener('resize', onWindowResize, false);
 
+			// WHERE I ATTEMPTED TO MAKE A LINE
+			// var Linematerial = new THREE.LineBasicMaterial({
+			// 	color: 0xffffff
+			// });
+			// var lines = new THREE.Geometry();
+			// lines.vertices.push(new THREE.Vector3((window.innerWidth / 2 + window.innerWidth / 5) * -1, window.innerHeight/2 * -1, 0));
+			// lines.vertices.push(new THREE.Vector3(window.innerWidth / 4, window.innerHeight/2 * -1, 0));
+			// var line = new THREE.Line(lines, Linematerial);
+			// scene.add(line);
 			// initial selection
 			selection();
 		}
@@ -546,13 +540,13 @@
 					INTERSECTED.material.color.setHex(0X444444);
 
 					// if (INTERSECTED.kingdom != undefined){
-					document.getElementById("kingdom").innerHTML = "" + "Animalia";
-					document.getElementById("phylum").innerHTML = "" + INTERSECTED.phylum;
-					document.getElementById("class").innerHTML = "" + INTERSECTED.class;
-					document.getElementById("order").innerHTML = "" + INTERSECTED.order;
-					document.getElementById("family").innerHTML = "" + INTERSECTED.family;
-					document.getElementById("genus").innerHTML = "" + INTERSECTED.genus;
-					document.getElementById("species").innerHTML = "" + INTERSECTED.species;
+					document.getElementById("kingdom").innerHTML = "<b>KINGDOM</b><br>" + "Animalia";
+					document.getElementById("phylum").innerHTML = "<b>PHYLUM</b><br>" + "Cnidaria";
+					document.getElementById("class").innerHTML = "<b>CLASS</b><br>" + INTERSECTED.class;
+					document.getElementById("order").innerHTML = "<b>ORDER</b><br>" + INTERSECTED.order;
+					document.getElementById("family").innerHTML = "<b>FAMILY</b><br>" + INTERSECTED.family;
+					document.getElementById("genus").innerHTML = "<b>GENUS</b><br>" + INTERSECTED.genus;
+					document.getElementById("species").innerHTML = "<b>SPECIES</b><br>" + INTERSECTED.species;
 					// }
 
 					//DO I NEED THIS?? removes the groups labeled "current"
@@ -694,6 +688,7 @@
 		function selection(order) {
 			var chosen = [];
 			maxNatureCount = 0;
+
 			// var thisLevel = hierarchy[currentLevel];
 			if (order != undefined) {
 				// currentLevel++;
@@ -711,16 +706,25 @@
 			for (var i = 0; i < cnidaria.length; i++) {
 				if (cnidaria[i].classification.order == sel) {
 					// if (ps.particles.length < 500)
+					group[cnidaria[i].natureCount] += cnidaria[i].natureCount;
 					if (cnidaria[i].natureCount > maxNatureCount) {
 						maxNatureCount = cnidaria[i].natureCount;
 					};
-
-					console.log("max nature count--" + maxNatureCount);
+					// console.log("max nature count--" + maxNatureCount);
 					chosen.push(cnidaria[i]);
 
 				}
 
+				if (i == cnidaria.length) {
+					for (var j = 0; j < group.length; j++) {
+						if (group[j] != undefined) {
+							console.log("number of citations in each group ----" + group[j]);
+						}
+					}
+				}
+
 			}
+
 			// if ($(p).ge
 			// $("p").css("background-color");
 
@@ -747,9 +751,7 @@
 					ps.addParticle(chosen[i].classification.kingdom, chosen[i].classification.phylum, chosen[i].classification.class, chosen[i].classification.order, chosen[i].classification.family, chosen[i].classification.genus, chosen[i].species, chosen[i].sciName, chosen[i].natureCount, link, title);
 
 				}
-
 			}
-
 
 			console.log("Found order length is" + chosen.length);
 		}
@@ -764,75 +766,6 @@
 
 		}
 
-
-
-		// function phylumSelected() {
-
-		// 	var ul = document.getElementById("list");
-		// 	var li = document.createElement("li");
-		// 	li.appendChild(document.createTextNode("Anthozoa"));
-		// 	ul.appendChild(li);
-		// 	li.setAttribute("class", "class");
-
-
-
-		// 	var li2 = document.createElement("li");
-		// 	li2.appendChild(document.createTextNode("Cubozoa"));
-		// 	ul.appendChild(li2);
-		// 	li2.setAttribute("class", "class");
-
-
-
-		// 	var li3 = document.createElement("li");
-		// 	li3.appendChild(document.createTextNode("Hydrozoa"));
-		// 	ul.appendChild(li3);
-		// 	li3.setAttribute("class", "class");
-
-
-
-		// 	var li4 = document.createElement("li");
-		// 	li4.appendChild(document.createTextNode("Scyphozoa"));
-		// 	ul.appendChild(li4);
-		// 	li4.setAttribute("class", "class");
-
-		// 	var li5 = document.createElement("li");
-		// 	li5.appendChild(document.createTextNode("Saurozoa"));
-		// 	ul.appendChild(li5);
-		// 	li5.setAttribute("class", "class");
-
-		// 	$('li.class').click(function() {
-		// 		$(this).addClass('active');
-		// 		$(this).siblings("li:not(.active)").remove();
-		// 		$(function() {
-		// 			var x = $("li").last().html();
-		// 			// console.log(x);
-		// 		});
-		// 	});
-		// }
-
-		// function orderMenu() {
-
-		// 	// document.getElementById("search").className = "fullscreen";
-
-		// 	// $('#search').on('click', function(e) {
-		// 	$('#search').css({
-		// 		width: "100%",
-		// 		height: "100%",
-		// 		margin: "0",
-		// 		border: "none"
-
-		// 	});
-		// 	// });
-
-		// }
-
-
-		// function orderMenu() {
-		// 	div = document.getElementById('tow');
-		// 	div.style.display = "block";
-		// }
-
-
 		/* Open when someone clicks on the span element */
 		function openNav() {
 			document.getElementById("myNav").style.width = "100%";
@@ -843,15 +776,6 @@
 			document.getElementById("myNav").style.width = "0%";
 		}
 
-		// function checkSearch() {
-		// 	document.getElementById('foo').addEventListener('click', fn);
-
-		// 	function fn() {
-		// 		console.log(this.innerHTML);
-		// 		closeNav();
-		// 	}
-		// }
-
 		$('body').on('click', 'a', function() {
 			// get the content of what's been clicked on
 			var choice = $(this).text();
@@ -860,10 +784,6 @@
 			selection(choice);
 			closeNav();
 		});
-
-		function drawLine() {
-
-		}
 
 		function scale(windowMin, windowMax, x, m) {
 			var a = windowMin;
@@ -875,7 +795,6 @@
 			var partC = max - min;
 			var partD = partA * partB;
 			var xCoordinate = partD / partC + a;
-			drawLine();
 			return xCoordinate;
 
 		}
