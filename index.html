@@ -156,7 +156,7 @@
 		var Particle = function(position, k, p, c, o, f, g, s, sn, count, link, title) {
 			this.acceleration = new THREE.Vector3(0, 0, 0);
 			this.velocity = new THREE.Vector3(0, 0, 0);
-			this.lifespan = 500.0; //how many frames they will move for 
+			this.lifespan = 1000.0; //how many frames they will move for 
 
 			this.r = 10;
 			this.maxspeed = 3; // Maximum speed
@@ -207,12 +207,12 @@
 				// console.log(this.object.natureCount);
 				if (this.object.natureCount == 0) {
 					//sets where particles will move 
-					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 3 * -1, 100, 0));
+					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2 * -1, 100, 0));
 				}
-				// else if (this.object.natureCount > 0 && this.object.natureCount < 6) {
-				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-				// 	var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
-				// }
+				else if (this.object.natureCount > 0 && this.object.natureCount < 6) {
+					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+					var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
+				}
 				else {
 					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 3, 100, 0));
 				}
