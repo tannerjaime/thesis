@@ -151,18 +151,24 @@ li {
     border: 1px solid #000;
     color: #E1EBF1;
 }
-
+#rightBar {
+    position: absolute;
+    top: 5%;
+    height: 96%;
+    width: 20%;
+    right: 3%;
+}
 #openNav {
     /*font-weight: bold;*/
     /*font-size: 1.3em;*/
     height: 15%;
     top: 0%;
-    position: absolute;
+    position: relative;
     right: 0%;
-    width: 24%;
+    width: 100%;
     /*visibility: hidden;*/
     color: #E1EBF1;
-    background-color: #ffffff;
+    background-color: #cfa5ae;
 }
 
 #openNav #exploreOrders {
@@ -183,6 +189,42 @@ li {
 }
 /* The Overlay (background) */
 
+#otherInfo {
+    /*font-weight: bold;*/
+    /*font-size: 1.3em;*/
+    height: 35%;
+    top: 20%;
+    position: absolute;
+    right: 0%;
+    width: 100%;
+    /*visibility: hidden;*/
+    color: #E1EBF1;
+    background-color: #cfa5ae;
+}
+
+#otherInfo #heirarchy {
+    position: relative;
+    text-align: right;
+    width: 15%;
+    height: 100%;
+    left: 10%;
+    top: 5%;
+    font-family: 'tofinoBold';
+    font-size: 1em;
+    letter-spacing: .028em;
+}
+
+#otherInfo #info {
+    position: absolute;
+    text-align: left;
+    width: 30%;
+    height: 100%;
+    right: 10% ;
+    top: 5%;
+    font-family: 'tofinoLight';
+    font-size: 1em;
+    letter-spacing: .028em;
+}
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */
     height: 100%;
