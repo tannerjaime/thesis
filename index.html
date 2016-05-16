@@ -44,7 +44,8 @@
 
 		<!-- Overlay content -->
 		<div class="overlay-content">
-			<p>A taxonomic order is a scientific grouping of related organisms. <br> Some examples of taxonomic orders are primates, rodents, and pine.</p>
+			<p>A taxonomic order is a scientific grouping of related organisms.
+				<br> Some examples of taxonomic orders are primates, rodents, and pine.</p>
 			<h1>SELECT AN <b>ORDER</b> TO EXPLORE</h1>
 			<div id="leftLeft">
 				<a id="foo">Actiniaria</a>
@@ -83,7 +84,8 @@
 
 	<!-- Use any element to open/show the overlay navigation menu -->
 	<div id="openNav" onclick="openNav()">
-	<p id="exploreOrders" >EXPLORE OTHER <br> <b> ORGANISMS </b></span>
+		<p id="exploreOrders">EXPLORE OTHER
+			<br> <b> ORGANISMS </b></span>
 	</div>
 
 	<div id="info">
@@ -109,11 +111,12 @@
 		// Simple Particle System
 
 		var ps;
+		var maxNatureCount = 0;
 
 		// levels available
 		var hierarchy = ["kingdom", "phylum", "class", "order", "family", "genus", "species", "sciName"];
 		var oders = ["Actiniaria", "Alcyonacea", "Antipatharia", "Ceriantharia", "Corallimorpharia", "Heliolitina", "Helioporacea", "Pennatulacea", "Scleractinia", "Zoantharia", "Chirodropida", "Cubomedusae", "Actinulida", "Anthoathecata", "Leptothecata", "Limnomedusae", "Narcomedusae", "Siphonophorae", "Trachymedusae", "Coronatae", "Rhizostomeae", "Semaeostomeae", "Stauromedusae"];
-		
+
 		var ParticleSystem = function(position) {
 			this.origin = new THREE.Vector3(0, 0, 0);
 			this.particles = [];
@@ -128,7 +131,7 @@
 					if (p.lifespan > 0) {
 						p.applyBehaviors(this.particles);
 						p.update();
-					} 
+					}
 					// apply lifespan, or not
 					// 	if (p.isDead()) {
 					// 	 this.particles.splice(i, 1);
@@ -143,7 +146,7 @@
 					var p = this.particles[i];
 					p.remove();
 				}
-				
+
 				// clear particles array
 				this.particles.splice(0, this.particles.length);
 				// clear objects array
@@ -173,24 +176,31 @@
 
 			// throw the dice to simulate a specific species from the db
 			// this.species = count; // adjust scale based on shuffle
-			if (count == 0){
+			if (count == 0) {
 				this.species = 0x4B4E6A;
-			} else if (count == 1) {
+			}
+			else if (count == 1) {
 				this.species = 0x395DAE;
-			} else if (count == 2) {
+			}
+			else if (count == 2) {
 				this.species = 0x219ED9;
-			} else if (count == 3) {
+			}
+			else if (count == 3) {
 				this.species = 0x0FD0EF;
-			} else if (count == 4) {
+			}
+			else if (count == 4) {
 				this.species = 0x04F1FB;
-			} else if (count == 5) {
+			}
+			else if (count == 5) {
 				this.species = 0x04F1FB;
-			} else if (count == 6) {
+			}
+			else if (count == 6) {
 				this.species = 0xA0E1E0;
-			} else {
+			}
+			else {
 				this.species = 0xDDF3F3;
 			}
-			
+
 
 			geometry = new THREE.CircleBufferGeometry(this.r); // parameter represents scale
 			// create object with basic material and color based on random species shuffled earlier
@@ -214,7 +224,7 @@
 			this.object.natureTitles = title;
 			// make object selectable by name
 			this.object.name = this.object.sciName;
-			
+
 			// this.object.natureLink = [];
 			// this.object.natureTitles.push(natureTitle);
 			// for (var i = 0; i < link.length; i++){
@@ -232,30 +242,43 @@
 
 			this.applyBehaviors = function(particles) {
 				var separateForce = this.separate(particles);
-				// console.log(this.object.natureCount);
-				if (this.object.natureCount == 0) {
-					//sets where particles will move 
-					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2 * -1, 100, 0));
-				}
-				else if (this.object.natureCount == 1) {
-					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 4 * -1, 100, 0));
-				}
-				else if (this.object.natureCount == 2) {
-					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-					var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
-				}
-				else if (this.object.natureCount == 3) {
-					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 4, 100, 0));
-				}
-				else if (this.object.natureCount == 4) {
-					// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 3, 100, 0));
-				}
-				else {
-					var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, 100, 0));
-				}
+
+				// if (this.object.natureCount == 0) {
+				// 	//sets where particles will move 
+				var seekForce = this.seek(new THREE.Vector3(scale((window.innerWidth / 2 + window.innerWidth / 5) * -1, window.innerWidth / 4, this.object.natureCount, maxNatureCount), 100, 0));
+
+
+				// WHERE I ATTEMPTED TO MAKE A LINE
+				// var Linematerial = new THREE.LineBasicMaterial({
+				// 	color: 0xffffff
+				// });
+				// var lines = new THREE.Geometry();
+				// lines.vertices.push(new THREE.Vector3((window.innerWidth / 2 + window.innerWidth / 5) * -1, -200, 0));
+				// lines.vertices.push(new THREE.Vector3(window.innerWidth / 4, -200, 0));
+				// var line = new THREE.Line(lines, Linematerial);
+				// scene.add(line);
+
+				// }
+				// else if (this.object.natureCount == 1) {
+				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+				// 	var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 4 * -1, 100, 0));
+				// }
+				// else if (this.object.natureCount == 2) {
+				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+				// 	var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
+				// }
+				// else if (this.object.natureCount == 3) {
+				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+				// 	var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 4, 100, 0));
+				// }
+				// else if (this.object.natureCount == 4) {
+				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
+				// 	var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 3, 100, 0));
+				// }
+				// else {
+				// 	var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, 100, 0));
+				// }
+
 
 				// relationship between separation and seeking
 				separateForce.multiplyScalar(10); // double separation
@@ -461,7 +484,7 @@
 		}
 
 		function onDocumentMouseMove(event) {
-			
+
 			// checkSearch();
 			event.preventDefault();
 
@@ -566,7 +589,7 @@
 			}
 
 
-		
+
 		}
 
 		function onDocumentMouseDown(event) {
@@ -574,7 +597,7 @@
 
 			// console.log("number of objects: " + objects.length);
 			// console.log(objects);
-			
+
 			event.preventDefault();
 
 			// send out a virtual ray to catch intersection objects so we can drag and select them
@@ -584,7 +607,7 @@
 
 			// if we found intersection objects
 			if (intersects.length > 0) {
-				
+
 				controls.enabled = false;
 
 				SELECTED = intersects[0].object;
@@ -622,7 +645,7 @@
 			}
 
 			container.style.cursor = 'auto';
-					
+
 
 		}
 
@@ -655,7 +678,8 @@
 
 		//when click, look through all of the ORDERS for the order Antipatharia in the object Cnidaria and push them into an array, t
 		function selection(order) {
-					var chosen = [];
+			var chosen = [];
+			maxNatureCount = 0;
 			// var thisLevel = hierarchy[currentLevel];
 			if (order != undefined) {
 				// currentLevel++;
@@ -666,14 +690,18 @@
 			else {
 				sel = 'Stauromedusae';
 			}
-			
-			
-				// console.log(selected.length);
+
+
+			// console.log(selected.length);
 			// make selection
 			for (var i = 0; i < cnidaria.length; i++) {
 				if (cnidaria[i].classification.order == sel) {
 					// if (ps.particles.length < 500)
+					if (cnidaria[i].natureCount > maxNatureCount) {
+						maxNatureCount = cnidaria[i].natureCount;
+					};
 
+					console.log("max nature count--" + maxNatureCount);
 					chosen.push(cnidaria[i]);
 
 				}
@@ -809,18 +837,36 @@
 		// 		closeNav();
 		// 	}
 		// }
-		
+
 		$('body').on('click', 'a', function() {
 			// get the content of what's been clicked on
-			var choice = $( this ).text();
-		    console.log(choice);
-		    // use that content to make the selection
-		    selection(choice);
-		    closeNav();
+			var choice = $(this).text();
+			console.log(choice);
+			// use that content to make the selection
+			selection(choice);
+			closeNav();
 		});
+
+		function drawLine() {
+
+		}
+
+		function scale(windowMin, windowMax, x, m) {
+			var a = windowMin;
+			var b = windowMax;
+			var min = 0;
+			var max = m;
+			var partA = b - a;
+			var partB = x - min;
+			var partC = max - min;
+			var partD = partA * partB;
+			var xCoordinate = partD / partC + a;
+			drawLine();
+			return xCoordinate;
+
+		}
 	</script>
 
 </body>
 
 </html>
- 
