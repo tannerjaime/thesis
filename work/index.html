@@ -136,13 +136,20 @@
 				}
 			};
 
+			// clear all particles for a new selection
 			this.clear = function() {
 				console.log("clear particle system");
 				for (var i = 0; i < this.particles.length; i++) {
 					var p = this.particles[i];
 					p.remove();
 				}
-				objects = [];
+				
+				// clear particles array
+				this.particles.splice(0, this.particles.length);
+				// clear objects array
+				objects.splice(0, objects.length);
+				// check how we are doing
+				console.log("# particles:" + this.particles.length + " | # objects: " + objects.length);
 			}
 
 
@@ -158,7 +165,7 @@
 		var Particle = function(position, k, p, c, o, f, g, s, sn, count, link, title) {
 			this.acceleration = new THREE.Vector3(0, 0, 0);
 			this.velocity = new THREE.Vector3(0, 0, 0);
-			this.lifespan = 2000.0; //how many frames they will move for 
+			this.lifespan = 1000.0; //how many frames they will move for 
 
 			this.r = 10;
 			this.maxspeed = 3; // Maximum speed
@@ -324,7 +331,7 @@
 				// this.object.position.setZ(this.species * 100);
 				// lifespan is for making particles expire
 				//IF COMMENTED OUT, THEY WILL NEVER EXPIRE
-				// this.lifespan -= 1;
+				this.lifespan -= 1;
 			};
 
 			// Method to display
