@@ -37,6 +37,13 @@
 	<!--info-->
 	<!--<button type="button" id="searchButton" onclick="orderMenu()">search</button>-->
 	<!-- The overlay -->
+
+	<div id="title">
+		<!--<a>-->
+			 <!--Mentions of <b>Stauromedusae</b><br> in the Publication <i>Nature</i> -->
+			 <!--</a>-->
+		</div>
+
 	<div id="myNav" class="overlay">
 
 		<!-- Button to close the overlay navigation -->
@@ -88,17 +95,19 @@
 			<p id="exploreOrders">EXPLORE OTHER
 				<br> <b> ORGANISMS </b></span>
 		</div>
+	</div>
 
+	<div id="below">
 		<div id="otherInfo">
-
+			<div id="heirarchy">Taxonomy</div>
 			<div id="info">
-				<p id="kingdom"> </p>
-				<p id="phylum">  </p>
-				<p id="class">  </p>
-				<p id="order">   </p>
-				<p id="family">   </p>
-				<p id="genus">  </p>
-				<p id="species">   </p>
+				<!--<p id="kingdom"> </p>-->
+				<!--<p id="phylum"> </p>-->
+				<!--<p id="class"> </p>-->
+				<p id="order"> </p>
+				<p id="family"> </p>
+				<p id="genus"> </p>
+				<p id="species"> </p>
 			</div>
 		</div>
 		<!--<div id="search"></div>-->
@@ -106,8 +115,10 @@
 			<div id="nature">Publications</div>
 			<div id="currentPublications"></div>
 		</div>
-
 	</div>
+
+
+	<div id="pageRunner"></div>
 	<!--<span class="phylum"> Phylum </span> <span>Cnidaria</span>-->
 	<script>
 		// The Nature of Code
@@ -118,11 +129,12 @@
 		var ps;
 		var maxNatureCount = 0;
 		var allCounts = [];
+		var groupSum = [];
 		var group = [];
 
 		// levels available
 		var hierarchy = ["kingdom", "phylum", "class", "order", "family", "genus", "species", "sciName"];
-		var oders = ["Actiniaria", "Alcyonacea", "Antipatharia", "Ceriantharia", "Corallimorpharia", "Heliolitina", "Helioporacea", "Pennatulacea", "Scleractinia", "Zoantharia", "Chirodropida", "Cubomedusae", "Actinulida", "Anthoathecata", "Leptothecata", "Limnomedusae", "Narcomedusae", "Siphonophorae", "Trachymedusae", "Coronatae", "Rhizostomeae", "Semaeostomeae", "Stauromedusae"];
+		var orders = ["Actiniaria", "Alcyonacea", "Antipatharia", "Ceriantharia", "Corallimorpharia", "Heliolitina", "Helioporacea", "Pennatulacea", "Scleractinia", "Zoantharia", "Chirodropida", "Cubomedusae", "Actinulida", "Anthoathecata", "Leptothecata", "Limnomedusae", "Narcomedusae", "Siphonophorae", "Trachymedusae", "Coronatae", "Rhizostomeae", "Semaeostomeae", "Stauromedusae"];
 
 		var ParticleSystem = function(position) {
 			this.origin = new THREE.Vector3(0, 0, 0);
@@ -173,13 +185,13 @@
 		};
 
 		var Particle = function(position, k, p, c, o, f, g, s, sn, count, link, title) {
-			this.acceleration = new THREE.Vector3(0, 0, 0);
-			this.velocity = new THREE.Vector3(0, 0, 0);
-			this.lifespan = 1000.0; //how many frames they will move for 
+			this.acceleration = new THREE.Vector3(Math.random() * 10 - 5, Math.random() * 10 - 5, 0);
+			this.velocity = new THREE.Vector3(Math.random() - .5, Math.random() - .5, 0);
+			this.lifespan = 1500.0; //how many frames they will move for 
 
-			this.r = 10;
+			this.r = 12;
 			this.maxspeed = 3; // Maximum speed
-			this.maxforce = 0.2; // Maximum steering force
+			this.maxforce = 0.3; // Maximum steering force
 
 			// throw the dice to simulate a specific species from the db
 			// this.species = count; // adjust scale based on shuffle
@@ -252,31 +264,9 @@
 
 				// if (this.object.natureCount == 0) {
 				// 	//sets where particles will move 
-				var seekForce = this.seek(new THREE.Vector3(scale((window.innerWidth / 2 + window.innerWidth / 3) * -1, window.innerWidth / 2, this.object.natureCount, maxNatureCount), 100, 0));
+				var seekForce = this.seek(new THREE.Vector3(scale((window.innerWidth / 2 + window.innerWidth / 8) * -1, window.innerWidth / 2 + window.innerWidth / 8, this.object.natureCount, maxNatureCount), window.innerHeight / 2, 0));
 
 
-
-
-				// }
-				// else if (this.object.natureCount == 1) {
-				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-				// 	var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 4 * -1, 100, 0));
-				// }
-				// else if (this.object.natureCount == 2) {
-				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-				// 	var seekForce = this.seek(new THREE.Vector3(0, 100, 0));
-				// }
-				// else if (this.object.natureCount == 3) {
-				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-				// 	var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 4, 100, 0));
-				// }
-				// else if (this.object.natureCount == 4) {
-				// 	// var seekForce = this.seek(new THREE.Vector3((((window.innerWidth / 1.15) - (window.innerWidth / 1.15 * -1)) / this.object.natureCount) + (window.innerWidth / 1.15 * -1) , 100, 0));
-				// 	var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 3, 100, 0));
-				// }
-				// else {
-				// 	var seekForce = this.seek(new THREE.Vector3(window.innerWidth / 2, 100, 0));
-				// }
 
 
 				// relationship between separation and seeking
@@ -400,7 +390,7 @@
 			document.body.appendChild(container);
 
 			camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 10000);
-			camera.position.z = 1500;
+			camera.position.z = 1000;
 
 			controls = new THREE.TrackballControls(camera);
 			controls.rotateSpeed = 1.0;
@@ -540,9 +530,9 @@
 					INTERSECTED.material.color.setHex(0X444444);
 
 					// if (INTERSECTED.kingdom != undefined){
-					document.getElementById("kingdom").innerHTML = "<b>KINGDOM</b><br>" + "Animalia";
-					document.getElementById("phylum").innerHTML = "<b>PHYLUM</b><br>" + "Cnidaria";
-					document.getElementById("class").innerHTML = "<b>CLASS</b><br>" + INTERSECTED.class;
+					// document.getElementById("kingdom").innerHTML = "<b>KINGDOM</b><br>" + "Animalia";
+					// document.getElementById("phylum").innerHTML = "<b>PHYLUM</b><br>" + "Cnidaria";
+					// document.getElementById("class").innerHTML = "<b>CLASS</b><br>" + INTERSECTED.class;
 					document.getElementById("order").innerHTML = "<b>ORDER</b><br>" + INTERSECTED.order;
 					document.getElementById("family").innerHTML = "<b>FAMILY</b><br>" + INTERSECTED.family;
 					document.getElementById("genus").innerHTML = "<b>GENUS</b><br>" + INTERSECTED.genus;
@@ -564,7 +554,7 @@
 						for (var a = 0; a < INTERSECTED.natureArticles.length; a++) {
 							document.getElementById("nature").innerHTML = "Number of citations: " + INTERSECTED.natureCount;
 							// assemble html formatted string, list items li 
-							publicationString += "<li>" + INTERSECTED.natureArticles[a] + "</li>\n";
+							publicationString += "<li href='" + INTERSECTED.natureArticles[a] + "'>" + INTERSECTED.natureTitles[a] + "</li>\n";
 							// document.getElementById("nature").insertAdjacentHTML('afterend', '<div id=' + "current" + ' href=' + INTERSECTED.natureArticles[a] + '>' + INTERSECTED.natureTitles[a] + '</div>');
 						}
 						// finish off unsorted list
@@ -687,6 +677,8 @@
 		//when click, look through all of the ORDERS for the order Antipatharia in the object Cnidaria and push them into an array, t
 		function selection(order) {
 			var chosen = [];
+			group = [];
+			groupSum = [];
 			maxNatureCount = 0;
 
 			// var thisLevel = hierarchy[currentLevel];
@@ -695,18 +687,25 @@
 				// console.log("level no: " + currentLevel + " | thisLevel: " + thisLevel + " | thisLevel Obj: " + obj[thisLevel]);
 				// sel = obj[thisLevel];
 				sel = order;
+				document.getElementById("title").innerHTML = "<a>Mentions of <b>" + sel + "</b><br> in the Publication <i>Nature</i></a>";
 			}
 			else {
 				sel = 'Stauromedusae';
+				document.getElementById("title").innerHTML = "<a>Mentions of <b>" + sel + "</b><br> in the Publication <i>Nature</i></a>";
 			}
-
 
 			// console.log(selected.length);
 			// make selection
 			for (var i = 0; i < cnidaria.length; i++) {
 				if (cnidaria[i].classification.order == sel) {
-					// if (ps.particles.length < 500)
-					group[cnidaria[i].natureCount] += cnidaria[i].natureCount;
+					// find the groupings of pub counts
+					if (groupSum[cnidaria[i].natureCount] == undefined) {
+						groupSum[cnidaria[i].natureCount] = 0;
+					}
+					groupSum[cnidaria[i].natureCount] += cnidaria[i].natureCount;
+					group[cnidaria[i].natureCount] = cnidaria[i].natureCount;
+
+					//find the biggest number of pubs for this group
 					if (cnidaria[i].natureCount > maxNatureCount) {
 						maxNatureCount = cnidaria[i].natureCount;
 					};
@@ -714,19 +713,32 @@
 					chosen.push(cnidaria[i]);
 
 				}
-
-				if (i == cnidaria.length) {
-					for (var j = 0; j < group.length; j++) {
-						if (group[j] != undefined) {
-							console.log("number of citations in each group ----" + group[j]);
-						}
-					}
+				if (i === cnidaria.length - 1) {
+					console.log("summaries---" + groupSum);
+					console.log("numbers used ----" + group);
 				}
-
 			}
-
 			// if ($(p).ge
 			// $("p").css("background-color");
+
+
+
+			// container for assembling publications, unsorted list
+			var bottomBar = "<div>\n";
+			for (var a = 0; a < group.length; a++) {
+				// assemble html formatted string, list items 
+
+				// if (group[a] != undefined) {
+				bottomBar += "<p>" + group[a] + "</p>";
+				// }
+			}
+
+			bottomBar += "</div>\n";
+
+			console.log(bottomBar);
+			document.getElementById("pageRunner").innerHTML = bottomBar;
+
+
 
 			if (chosen.length > 0) {
 				// console.log("found " + chosen.length + " matches...");
@@ -753,7 +765,9 @@
 				}
 			}
 
-			console.log("Found order length is" + chosen.length);
+
+
+			// console.log("Found order length is" + chosen.length);
 		}
 
 
