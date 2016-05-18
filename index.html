@@ -699,11 +699,14 @@
 			for (var i = 0; i < cnidaria.length; i++) {
 				if (cnidaria[i].classification.order == sel) {
 					// find the groupings of pub counts
-					if (groupSum[cnidaria[i].natureCount] == undefined) {
-						groupSum[cnidaria[i].natureCount] = 0;
+					if (cnidaria[i].natureCount > 0) {
+						if (groupSum[cnidaria[i].natureCount] != undefined) {
+							// groupSum[cnidaria[i].natureCount] = 0;
+						
+							groupSum[cnidaria[i].natureCount] += cnidaria[i].natureCount;
+							group[cnidaria[i].natureCount] = cnidaria[i].natureCount;
+						}
 					}
-					groupSum[cnidaria[i].natureCount] += cnidaria[i].natureCount;
-					group[cnidaria[i].natureCount] = cnidaria[i].natureCount;
 
 					//find the biggest number of pubs for this group
 					if (cnidaria[i].natureCount > maxNatureCount) {
@@ -713,10 +716,10 @@
 					chosen.push(cnidaria[i]);
 
 				}
-				if (i === cnidaria.length - 1) {
-					console.log("summaries---" + groupSum);
-					console.log("numbers used ----" + group);
-				}
+				// if (i === cnidaria.length - 1) {
+				// 	console.log("summaries---" + groupSum);
+				// 	console.log("numbers used ----" + group);
+				// }
 			}
 			// if ($(p).ge
 			// $("p").css("background-color");
