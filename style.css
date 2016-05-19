@@ -33,28 +33,6 @@
     color: #E1EBF1;
 }
 
-#pageRunner{
-    /*height: 30px;*/
-    position: absolute;
-    top: 60%;
-    height: 10%;
-    width: 100%;
-    /*left: 0%;*/
-    /*text-align: center;*/
-    font-family: "TofinoBook";
-    font-size: 1.7em;
-    color: #ffffff;
-    letter-spacing: .028em;
-    /*padding-right: 200px;*/
-}
-
-/*.bottomBar {*/
-    /*left: 200px;*/
-/*    left: 10%;*/
-    /*width: 10% !important;*/
-/*    display: inline-block;*/
-/*}*/
-
 #title {
     /*height: 30px;*/
     position: absolute;
@@ -124,15 +102,15 @@ li {
 
 /*}*/
 
-#currentPublications {
-    position: absolute;
-    right: 0%;
-    top: 80%;
-    width: 20%;
-    text-align: left;
-    font-size: 1em;
-    color: #E1EBF1;
-}
+/*#currentPublications {*/
+/*    position: absolute;*/
+/*    right: 0%;*/
+/*    top: 80%;*/
+/*    width: 20%;*/
+/*    text-align: left;*/
+/*    font-size: 1em;*/
+/*    color: #E1EBF1;*/
+/*}*/
 
 #line {
     position: absolute;
@@ -180,6 +158,7 @@ li {
 #openNav #exploreOrders b {
     font-size: 1.3em;
     font-family: 'tofinoBook';
+    color: #EFC954;
 }
 
 
@@ -211,25 +190,30 @@ li {
     position: relative;
     /*display: table-cell;*/
     text-align: left;
-    width: 80%;
+    width: 100%;
     height: 20%;
     left: 4%;
-    top: 8%;
-    font-family: 'tofinoMedium';
+    top: 10%;
+    font-family: 'tofinoBook';
     font-size: 1.3em;
     letter-spacing: .028em;
+}
+
+#pubBox #nature b {
+    font-family: "tofinoMedium";
+        color: #EFC954;
 }
 
 #pubBox #currentPublications {
     position: absolute;
     /*display: table-cell;*/
     text-align: left;
-    width: 100%;
+    width: 105% !important;
     height: 100%;
-    left: 4%;
+    left: -4% !important;
     top: 30%;
     font-family: 'tofinoLight';
-    font-size: 1.1em;
+    font-size: 1em;
     letter-spacing: .028em;
     z-index:2;
 
@@ -257,7 +241,7 @@ li {
     height: 10%;
     left: 4%;
     top: 8%;
-    font-family: 'tofinoMedium';
+    font-family: 'tofinoBook';
     font-size: 1.3em;
     letter-spacing: .028em;
     /*color: ;*/

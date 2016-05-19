@@ -553,7 +553,7 @@
 						// container for assembling publications, unsorted list
 						var publicationString = "<ul>\n";
 						for (var a = 0; a < INTERSECTED.natureArticles.length; a++) {
-							document.getElementById("nature").innerHTML = "Number of citations: " + INTERSECTED.natureCount;
+							document.getElementById("nature").innerHTML = "<b>" +INTERSECTED.sciName + " </b> is Mentioned in <b>" + INTERSECTED.natureCount + "</b> articles";
 							// assemble html formatted string, list items li 
 							publicationString += "<li href='" + INTERSECTED.natureArticles[a] + "'>" + INTERSECTED.natureTitles[a] + "</li>\n";
 							// document.getElementById("nature").insertAdjacentHTML('afterend', '<div id=' + "current" + ' href=' + INTERSECTED.natureArticles[a] + '>' + INTERSECTED.natureTitles[a] + '</div>');
