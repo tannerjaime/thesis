@@ -37,7 +37,9 @@
 	<!--info-->
 	<!--<button type="button" id="searchButton" onclick="orderMenu()">search</button>-->
 	<!-- The overlay -->
-
+	<div id="mycanvas"></div>
+	
+	
 	<div id="title">
 		<!--<a>-->
 			 <!--Mentions of <b>Stauromedusae</b><br> in the Publication <i>Nature</i> -->
@@ -264,7 +266,7 @@
 
 				// if (this.object.natureCount == 0) {
 				// 	//sets where particles will move 
-				var seekForce = this.seek(new THREE.Vector3(scale((window.innerWidth / 2 + window.innerWidth / 8) * -1, window.innerWidth / 2 + window.innerWidth / 8, this.object.natureCount, maxNatureCount), window.innerHeight / 2, 0));
+				var seekForce = this.seek(new THREE.Vector3(scale((window.innerWidth / 2 + window.innerWidth / 8) * -1, window.innerWidth / 2 + window.innerWidth / 8, this.object.natureCount, maxNatureCount), (window.innerHeight / 2) - (window.innerHeight / 3) , 0));
 
 
 
@@ -386,8 +388,7 @@
 
 		function init() {
 
-			container = document.createElement('div');
-			document.body.appendChild(container);
+			container = document.getElementById("mycanvas");
 
 			camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 10000);
 			camera.position.z = 1000;
@@ -561,7 +562,7 @@
 						publicationString += "</ul>\n";
 						// document.getElementById("nature").appendChild(publicationString);
 						// write string to html element, currently line 48
-						console.log(publicationString);
+						// console.log(publicationString);
 						document.getElementById("currentPublications").innerHTML = publicationString;
 					}
 					else {
@@ -700,11 +701,15 @@
 				if (cnidaria[i].classification.order == sel) {
 					// find the groupings of pub counts
 					if (cnidaria[i].natureCount > 0) {
-						if (groupSum[cnidaria[i].natureCount] != undefined) {
-							// groupSum[cnidaria[i].natureCount] = 0;
-						
-							groupSum[cnidaria[i].natureCount] += cnidaria[i].natureCount;
+						if (groupSum[cnidaria[i].natureCount] == undefined) {
 							group[cnidaria[i].natureCount] = cnidaria[i].natureCount;
+							// groupSum[cnidaria[i].natureCount] = 0;
+							groupSum[cnidaria[i].natureCount] = cnidaria[i].natureCount;
+							console.log(groupSum);
+					console.log("test");
+						} else if (groupSum[cnidaria[i].natureCount] != undefined) {
+							groupSum[cnidaria[i].natureCount] += cnidaria[i].natureCount;
+							console.log(groupSum);
 						}
 					}
 
@@ -738,7 +743,6 @@
 
 			bottomBar += "</div>\n";
 
-			console.log(bottomBar);
 			document.getElementById("pageRunner").innerHTML = bottomBar;
 
 
@@ -753,7 +757,7 @@
 				for (var i = 0; i < chosen.length; i++) {
 					var link, title;
 
-					console.log(chosen.length);
+					// console.log(chosen.length);
 					if (chosen[i].natureCount > 0) {
 						link = chosen[i].natureArticles;
 						title = chosen[i].natureTitles;
@@ -762,9 +766,9 @@
 						link = "NaN";
 						title = "NaN";
 					}
-					// console.log(title);
+					
 					ps.addParticle(chosen[i].classification.kingdom, chosen[i].classification.phylum, chosen[i].classification.class, chosen[i].classification.order, chosen[i].classification.family, chosen[i].classification.genus, chosen[i].species, chosen[i].sciName, chosen[i].natureCount, link, title);
-
+					
 				}
 			}
 
@@ -796,7 +800,7 @@
 		$('body').on('click', 'a', function() {
 			// get the content of what's been clicked on
 			var choice = $(this).text();
-			console.log(choice);
+			// console.log(choice);
 			// use that content to make the selection
 			selection(choice);
 			closeNav();

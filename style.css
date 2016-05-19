@@ -182,6 +182,7 @@ li {
     /*visibility: hidden;*/
     color: #E1EBF1;
     background-color: #2F3132;
+        overflow-y: scroll;
 }
 
 #pubBox #nature {
@@ -202,12 +203,14 @@ li {
     /*display: table-cell;*/
     text-align: left;
     width: 100%;
-    height: 60%;
+    height: 100%;
     left: 4%;
     top: 30%;
     font-family: 'tofinoLight';
     font-size: 1.1em;
     letter-spacing: .028em;
+    z-index:2;
+
 }
 
 #otherInfo {
