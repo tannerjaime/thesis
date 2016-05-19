@@ -139,6 +139,7 @@ li {
     width: 100%;
     /*visibility: hidden;*/
     color: #E1EBF1;
+    opacity:.9;
     background-color: #2F3132;
 }
 
@@ -183,7 +184,8 @@ li {
     /*visibility: hidden;*/
     color: #E1EBF1;
     background-color: #2F3132;
-        overflow-y: scroll;
+    opacity:.9;
+    overflow-y: scroll;
 }
 
 #pubBox #nature {
@@ -210,6 +212,7 @@ li {
     text-align: left;
     width: 105% !important;
     height: 100%;
+    /*padding-bottom: 10%;*/
     left: -4% !important;
     top: 30%;
     font-family: 'tofinoLight';
@@ -230,6 +233,7 @@ li {
     /*visibility: hidden;*/
     color: #E1EBF1;
     background-color: #2F3132;
+    opacity:.9;
     /*display: table-cell;*/
 }
 
