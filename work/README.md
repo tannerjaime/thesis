@@ -7,6 +7,10 @@
 * gbifRequest.js : calls JSON files, reorganizes and merges them into one JSON file
 * natureRequest.js : queries the [Nature OpenSearch API] (http://www.nature.com/developers/documentation/api-references/opensearch-api/) using the scientific name of each species, and creates a JSON file with the number of articles, and article titles and DOI. 
     
+### [Data Work](https://github.com/tannerjaime/thesis/tree/master/work/data%20work)
+
+### [Visualization](https://github.com/tannerjaime/thesis/blob/master/work/index.html)
+
 ### Planning
 
 ##### [Data Structure](https://github.com/tannerjaime/thesis/blob/master/work/dataStructure.js)
