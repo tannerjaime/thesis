@@ -302,7 +302,6 @@
 				return sum;
 			};
 
-			// seek the mouse
 			// this could be any attractor, or a series for them based on species
 			this.seek = function(target) {
 				var desired = target.sub(this.object.position); // A vector pointing from the location to the target
@@ -405,7 +404,8 @@
 			scene.add(light);
 
 			// var geometry = new THREE.BoxGeometry( 40, 40, 40 );
-
+			drawLine ((window.innerWidth / 2 + window.innerWidth / 8) * -1, window.innerHeight / 2.5 * -1, 0, window.innerWidth / 2 + window.innerWidth / 8,  window.innerHeight / 2.5 * -1, 0, 1,3
+				)
 			ps = new ParticleSystem(new THREE.Vector3(0, 0, 0));
 
 			plane = new THREE.Mesh(
@@ -769,6 +769,27 @@
 			// console.log("Found order length is" + chosen.length);
 		}
 
+
+		function drawLine (beginX, beginY, beginZ, endX, endY, endZ, alpha, weight) {
+				var material = new THREE.LineBasicMaterial({
+				color: 0xefc954,
+				linewidth: weight,
+				opacity: alpha
+				});
+				var geometry = new THREE.Geometry();
+				geometry.vertices.push(
+				new THREE.Vector3( beginX, beginY, beginZ ),
+				new THREE.Vector3( endX, endY, endZ )
+				// new THREE.Vector3( all[4].position.x,  all[4].position.y,  all[4].position.z ),
+				// new THREE.Vector3( all[8].position.x,  all[8].position.y,  all[8].position.z )
+				// new THREE.Vector3( 10, 0, 0 )
+				);
+				var line = new THREE.Line( geometry, material );
+				// console.log(line);
+				// linesArray.push(line);
+				// console.log(linesArray.length);
+				scene.add( line );
+			}
 
 		function render() {
 
