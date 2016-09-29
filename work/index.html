@@ -8,7 +8,7 @@
 	<style>
 		body {
 			font-family: Monospace;
-			background-color: #010C13;
+			background-color: #1E1E1E;
 			margin: 0px;
 			overflow: hidden;
 		}
@@ -76,9 +76,11 @@
 
 	<!-- Use any element to open/show the overlay navigation menu -->
 	<div id="rightBar">
+		<div id="openAbout">
+			<p id="about"> <b> ABOUT </b></p>
+		</div>
 		<div id="openNav" onclick="openNav()">
-			<p id="exploreOrders">EXPLORE OTHER
-				<br> <b> ORGANISMS </b></span>
+			<p id="exploreOrders"> <b> OTHER ORGANISMS </b></p>
 		</div>
 	</div>
 
@@ -404,8 +406,8 @@
 			scene.add(light);
 
 			// var geometry = new THREE.BoxGeometry( 40, 40, 40 );
-			drawLine ((window.innerWidth / 2 + window.innerWidth / 8) * -1, window.innerHeight / 2.5 * -1, 0, window.innerWidth / 2 + window.innerWidth / 8,  window.innerHeight / 2.5 * -1, 0, 1,3
-				)
+			// drawLine ((window.innerWidth / 2 + window.innerWidth / 8) * -1, window.innerHeight / 2.5 * -1, 0, window.innerWidth / 2 + window.innerWidth / 8,  window.innerHeight / 2.5 * -1, 0, 1,3)
+
 			ps = new ParticleSystem(new THREE.Vector3(0, 0, 0));
 
 			plane = new THREE.Mesh(

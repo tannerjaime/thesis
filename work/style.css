@@ -39,8 +39,8 @@
     top: 5%;
     height: 10%;
     width: 30%;
-    left: 5%;
-    text-align: left;
+    right: 5%;
+    text-align: right;
     font-family: "TofinoBook";
     font-size: 1.7em;
     color: #ffffff;
@@ -123,10 +123,20 @@ li {
 
 #rightBar {
     position: absolute;
-    top: 5%;
-    height: 96%;
-    width: 10%;
-    right: 3%;
+    top: 10%;
+    height: 30%;
+    width: 20%;
+    right: 4%;
+    color: #a6a6a6;
+}
+
+#openAbout {
+    height: 15%;
+    top: 0%;
+    position: absolute;
+    left: 0%;
+    width: 50%;
+    /*color: #E1EBF1;*/
 }
 
 #openNav {
@@ -134,15 +144,15 @@ li {
     /*font-size: 1.3em;*/
     height: 15%;
     top: 0%;
-    position: relative;
+    position: absolute;
     right: 0%;
-    width: 100%;
+    width: 50%;
     /*visibility: hidden;*/
-    color: #E1EBF1;
-    background-color: #2F3132;
+    /*color: #E1EBF1;*/
+    /*background-color: #1E1E1E;*/
 }
 
-#openNav #exploreOrders {
+#openNav #exploreOrders, #openAbout #about {
     position: absolute;
     text-align: center;
     /*left: 30%;*/
@@ -155,11 +165,20 @@ li {
     letter-spacing: .028em;
 }
 
-#openNav #exploreOrders b {
-    font-size: 1.3em;
+#openNav #exploreOrders b, #openAbout #about b {
+    font-size: 1.1em;
     font-family: 'tofinoBook';
 }
 
+/*#openNav #exploreOrders:hover, #about:hover {
+    color: #E1EBF1;
+    font-size: 0.85em;
+}*/
+
+#exploreOrders b:hover, #about b:hover {
+    color: #E1EBF1;
+    font-size: 1.4em;
+}
 
 /* The Overlay (background) */
 
@@ -181,7 +200,7 @@ li {
     width: 49.5%;
     /*visibility: hidden;*/
     color: #E1EBF1;
-    background-color: #2F3132;
+    background-color: #030303;
 }
 
 #pubBox #nature {
@@ -220,7 +239,7 @@ li {
     width: 49%;
     /*visibility: hidden;*/
     color: #E1EBF1;
-    background-color: #2F3132;
+    background-color: #030303;
     /*display: table-cell;*/
 }
 
