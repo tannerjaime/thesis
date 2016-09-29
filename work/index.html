@@ -8,7 +8,7 @@
 	<style>
 		body {
 			font-family: Monospace;
-			background-color: #1E1E1E;
+			background-color: #0A0A0A;
 			margin: 0px;
 			overflow: hidden;
 		}
@@ -26,7 +26,7 @@
 
 	<div id="mycanvas"></div>
 
-	<div id="title">
+	<div id="title" onclick="openNav()">
 		</div>
 
 	<div id="myNav" class="overlay">
@@ -78,6 +78,7 @@
 	<div id="rightBar">
 		<div id="openAbout">
 			<p id="about"> <b> ABOUT </b></p>
+			<img src="info.png"  style="width:9px;height:18px;">
 		</div>
 		<div id="openNav" onclick="openNav()">
 			<p id="exploreOrders"> <b> OTHER ORGANISMS </b></p>
@@ -174,7 +175,7 @@
 		var Particle = function(position, k, p, c, o, f, g, s, sn, count, link, title) {
 			this.acceleration = new THREE.Vector3(Math.random() * 10 - 5, Math.random() * 10 - 5, 0);
 			this.velocity = new THREE.Vector3(Math.random() - .5, Math.random() - .5, 0);
-			this.lifespan = 1500.0; //how many frames they will move for 
+			this.lifespan = 15000.0; //how many frames they will move for 
 
 			this.r = 12;
 			this.maxspeed = 3; // Maximum speed
@@ -208,7 +209,7 @@
 			}
 
 
-			geometry = new THREE.CircleBufferGeometry(this.r); // parameter represents scale
+			geometry = new THREE.CircleBufferGeometry(this.r, 20); // parameter represents scale
 			// create object with basic material and color based on random species shuffled earlier
 			// color is made up on arbitrary number based on species code
 			this.object = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
@@ -673,11 +674,11 @@
 				// console.log("level no: " + currentLevel + " | thisLevel: " + thisLevel + " | thisLevel Obj: " + obj[thisLevel]);
 				// sel = obj[thisLevel];
 				sel = order;
-				document.getElementById("title").innerHTML = "<a>Mentions of <b>" + sel + "</b><br> in the Publication <i>Nature</i></a>";
+				document.getElementById("title").innerHTML = "<a>Mentions of <b>" + sel  + "  &#9660 </b><br> in the Publication <i>Nature</i></a>";
 			}
 			else {
 				sel = 'Stauromedusae';
-				document.getElementById("title").innerHTML = "<a>Mentions of <b>" + sel + "</b><br> in the Publication <i>Nature</i></a>";
+				document.getElementById("title").innerHTML = "<a>Mentions of <b>" + sel + "  	&#9660; </b><br> in the Publication <i>Nature</i></a>";
 			}
 
 			// console.log(selected.length);
@@ -797,7 +798,7 @@
 
 			controls.update();
 
-			renderer.setClearColor(new THREE.Color(0x010C13), 1);
+			renderer.setClearColor(new THREE.Color(0x000000), 1);
 			renderer.render(scene, camera);
 
 		}
