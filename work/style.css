@@ -42,7 +42,7 @@
     right: 5%;
     text-align: right;
     font-family: "TofinoBook";
-    font-size: 1.9em;
+    font-size: 1.7em;
     color: #ffffff;
     letter-spacing: .028em;
 }
@@ -133,10 +133,10 @@ li {
 
 #openAbout {
     height: 15%;
-    top: 10%;
+    top: 12%;
     position: absolute;
     right: 0%;
-    width: 50%;
+    width: 70%;
     text-align: right;
     /*color: #E1EBF1;*/
 }
@@ -148,7 +148,7 @@ li {
     top: 0%;
     position: absolute;
     right: 0%;
-    width: 50%;
+    width: 70%;
     /*visibility: hidden;*/
     /*color: #E1EBF1;*/
     /*background-color: #1E1E1E;*/
@@ -187,8 +187,8 @@ li {
 
 #below {
     position: absolute;
-    top: 80%;
-    height: 20%;
+    top: 75%;
+    height: 25%;
     width: 100%;
     right: 0%;
     color: #E1EBF1;
@@ -203,7 +203,7 @@ li {
     width: 49.5%;
     /*visibility: hidden;*/
     color: #E1EBF1;
-    background-color: #030303;
+    background-color: #666666;
 }
 
 #pubBox #nature {
@@ -293,7 +293,7 @@ li {
     /* Stay in place */
     z-index: 1;
     /* Sit on top */
-    left: 0;
+    right: 0;
     top: 0;
     background-color: rgb(255, 255, 255);
     /* Black fallback color */

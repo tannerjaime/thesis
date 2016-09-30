@@ -78,7 +78,7 @@
 	<div id="rightBar">
 		<div id="openAbout">
 			<p id="about"> <b> ABOUT </b></p>
-			<img src="info.png"  style="width:9px;height:18px;">
+			
 		</div>
 		<div id="openNav" onclick="openNav()">
 			<p id="exploreOrders"> <b> OTHER ORGANISMS </b></p>
@@ -87,11 +87,8 @@
 
 	<div id="below">
 		<div id="otherInfo">
-			<div id="heirarchy">Taxonomy</div>
+			<div id="heirarchy"> </div>
 			<div id="info">
-				<!--<p id="kingdom"> </p>-->
-				<!--<p id="phylum"> </p>-->
-				<!--<p id="class"> </p>-->
 				<p id="order"> </p>
 				<p id="family"> </p>
 				<p id="genus"> </p>
@@ -100,7 +97,7 @@
 		</div>
 		<!--<div id="search"></div>-->
 		<div id="pubBox">
-			<div id="nature">Publications</div>
+			<div id="nature"> </div>
 			<div id="currentPublications"></div>
 		</div>
 	</div>
@@ -378,14 +375,14 @@
 			camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 10000);
 			camera.position.z = 1000;
 
-			controls = new THREE.TrackballControls(camera);
-			controls.rotateSpeed = 1.0;
-			controls.zoomSpeed = 1.2;
-			controls.panSpeed = 0.8;
-			controls.noZoom = false;
-			controls.noPan = false;
-			controls.staticMoving = true;
-			controls.dynamicDampingFactor = 0.3;
+			// controls = new THREE.TrackballControls(camera);
+			// controls.rotateSpeed = 1.0;
+			// controls.zoomSpeed = 1.2;
+			// controls.panSpeed = 0.8;
+			// controls.noZoom = false;
+			// controls.noPan = false;
+			// controls.staticMoving = true;
+			// controls.dynamicDampingFactor = 0.3;
 
 			scene = new THREE.Scene();
 
@@ -593,7 +590,7 @@
 			// if we found intersection objects
 			if (intersects.length > 0) {
 
-				controls.enabled = false;
+				// controls.enabled = false;
 
 				SELECTED = intersects[0].object;
 
@@ -619,7 +616,7 @@
 
 			event.preventDefault();
 
-			controls.enabled = true;
+			// controls.enabled = true;
 
 			if (INTERSECTED) {
 
@@ -674,11 +671,11 @@
 				// console.log("level no: " + currentLevel + " | thisLevel: " + thisLevel + " | thisLevel Obj: " + obj[thisLevel]);
 				// sel = obj[thisLevel];
 				sel = order;
-				document.getElementById("title").innerHTML = "<a>Mentions of <b>" + sel  + "  &#9660 </b><br> in the Publication <i>Nature</i></a>";
+				document.getElementById("title").innerHTML = "<a>Mentions of <b>" + sel  + "</b><br> in the Publication <i>Nature</i></a>";
 			}
 			else {
 				sel = 'Stauromedusae';
-				document.getElementById("title").innerHTML = "<a>Mentions of <b>" + sel + "  	&#9660; </b><br> in the Publication <i>Nature</i></a>";
+				document.getElementById("title").innerHTML = "<a>Mentions of <b>" + sel + "</b><br> in the Publication <i>Nature</i></a>";
 			}
 
 			// console.log(selected.length);
@@ -796,7 +793,7 @@
 
 		function render() {
 
-			controls.update();
+			// controls.update();
 
 			renderer.setClearColor(new THREE.Color(0x000000), 1);
 			renderer.render(scene, camera);
