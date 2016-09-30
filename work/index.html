@@ -77,27 +77,28 @@
 	<!-- Use any element to open/show the overlay navigation menu -->
 	<div id="rightBar">
 		<div id="openAbout">
-			<p id="about"> <b> ABOUT </b></p>
+			<p id="about"> <b> LEARN MORE </b></p>
 			
 		</div>
 		<div id="openNav" onclick="openNav()">
-			<p id="exploreOrders"> <b> OTHER ORGANISMS </b></p>
+			<p id="exploreOrders"> <b> EXPLORE OTHER ORGANISMS </b></p>
 		</div>
 	</div>
 
 	<div id="below">
 		<div id="otherInfo">
 			<div id="heirarchy"> </div>
-			<div id="info">
-				<p id="order"> </p>
-				<p id="family"> </p>
-				<p id="genus"> </p>
-				<p id="species"> </p>
-			</div>
+			
 		</div>
 		<!--<div id="search"></div>-->
 		<div id="pubBox">
 			<div id="nature"> </div>
+			<!-- <div id="info">
+				<p id="order"> </p>
+				<p id="family"> </p>
+				<p id="genus"> </p>
+				<p id="species"> </p>
+			</div> -->
 			<div id="currentPublications"></div>
 		</div>
 	</div>
@@ -435,10 +436,8 @@
 			// container.appendChild(stats.domElement);
 
 			renderer.domElement.addEventListener('mousemove', onDocumentMouseMove, false);
-			renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
-			renderer.domElement.addEventListener('mouseup', onDocumentMouseUp, false);
-
-			//
+			// renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
+			// renderer.domElement.addEventListener('mouseup', onDocumentMouseUp, false);
 
 			window.addEventListener('resize', onWindowResize, false);
 
@@ -517,26 +516,16 @@
 					// document.getElementById("kingdom").innerHTML = "<b>KINGDOM</b><br>" + "Animalia";
 					// document.getElementById("phylum").innerHTML = "<b>PHYLUM</b><br>" + "Cnidaria";
 					// document.getElementById("class").innerHTML = "<b>CLASS</b><br>" + INTERSECTED.class;
-					document.getElementById("order").innerHTML = "<b>ORDER</b><br>" + INTERSECTED.order;
-					document.getElementById("family").innerHTML = "<b>FAMILY</b><br>" + INTERSECTED.family;
-					document.getElementById("genus").innerHTML = "<b>GENUS</b><br>" + INTERSECTED.genus;
-					document.getElementById("species").innerHTML = "<b>SPECIES</b><br>" + INTERSECTED.species;
+					// document.getElementById("order").innerHTML = "<b>ORDER</b><br>" + INTER
 					// }
 
-					//DO I NEED THIS?? removes the groups labeled "current"
 
-					// if ($('#current').length) {
-					// 	$('#current').remove();
-					// }
-					// else {
-					// 	console.log('no myID to remove');
-					// }
 					if (INTERSECTED.natureCount > 0) {
 
 						// container for assembling publications, unsorted list
 						var publicationString = "<ul>\n";
 						for (var a = 0; a < INTERSECTED.natureArticles.length; a++) {
-							document.getElementById("nature").innerHTML = "Number of citations: " + INTERSECTED.natureCount;
+							document.getElementById("nature").innerHTML =  "<b>" +INTERSECTED.sciName + " </b> is mentioned in <b>" + INTERSECTED.natureCount + "</b> articles";
 							// assemble html formatted string, list items li 
 							publicationString += "<li href='" + INTERSECTED.natureArticles[a] + "'>" + INTERSECTED.natureTitles[a] + "</li>\n";
 							// document.getElementById("nature").insertAdjacentHTML('afterend', '<div id=' + "current" + ' href=' + INTERSECTED.natureArticles[a] + '>' + INTERSECTED.natureTitles[a] + '</div>');
@@ -549,7 +538,11 @@
 						document.getElementById("currentPublications").innerHTML = publicationString;
 					}
 					else {
-						document.getElementById("nature").innerHTML = "";
+						document.getElementById("nature").innerHTML = "<b>" +INTERSECTED.sciName + " </b> is not mentioned in any articles";;
+						var publicationString = "<ul>\n";
+						publicationString += "<li href='" + INTERSECTED.natureArticles[a] + "'> </li>\n";
+						publicationString += "</ul>\n";
+						document.getElementById("currentPublications").innerHTML = publicationString;
 					}
 
 					plane.position.copy(INTERSECTED.position);
@@ -574,62 +567,62 @@
 
 		}
 
-		function onDocumentMouseDown(event) {
+		// function onDocumentMouseDown(event) {
 
 
-			// console.log("number of objects: " + objects.length);
-			// console.log(objects);
+		// 	// console.log("number of objects: " + objects.length);
+		// 	// console.log(objects);
 
-			event.preventDefault();
+		// 	event.preventDefault();
 
-			// send out a virtual ray to catch intersection objects so we can drag and select them
-			raycaster.setFromCamera(mouse, camera);
+		// 	// send out a virtual ray to catch intersection objects so we can drag and select them
+		// 	raycaster.setFromCamera(mouse, camera);
 
-			var intersects = raycaster.intersectObjects(objects);
+		// 	var intersects = raycaster.intersectObjects(objects);
 
-			// if we found intersection objects
-			if (intersects.length > 0) {
+		// 	// if we found intersection objects
+		// 	if (intersects.length > 0) {
 
-				// controls.enabled = false;
+		// 		// controls.enabled = false;
 
-				SELECTED = intersects[0].object;
+		// 		SELECTED = intersects[0].object;
 
-				// selection(SELECTED);
-
-
-				var intersects = raycaster.intersectObject(plane);
-
-				if (intersects.length > 0) {
-					offset.copy(intersects[0].point).sub(plane.position);
-
-				}
-
-				container.style.cursor = 'move';
-
-			}
+		// 		// selection(SELECTED);
 
 
-		}
+		// 		var intersects = raycaster.intersectObject(plane);
+
+		// 		if (intersects.length > 0) {
+		// 			offset.copy(intersects[0].point).sub(plane.position);
+
+		// 		}
+
+		// 		container.style.cursor = 'move';
+
+		// 	}
+
+
+		// }
 
 		// reset after dragging object is compete
-		function onDocumentMouseUp(event) {
+		// function onDocumentMouseUp(event) {
 
-			event.preventDefault();
+		// 	event.preventDefault();
 
-			// controls.enabled = true;
+		// 	// controls.enabled = true;
 
-			if (INTERSECTED) {
+		// 	if (INTERSECTED) {
 
-				plane.position.copy(INTERSECTED.position);
+		// 		plane.position.copy(INTERSECTED.position);
 
-				SELECTED = null;
+		// 		SELECTED = null;
 
-			}
+		// 	}
 
-			container.style.cursor = 'auto';
+		// 	container.style.cursor = 'auto';
 
 
-		}
+		// }
 
 		//
 

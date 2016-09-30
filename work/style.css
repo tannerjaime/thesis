@@ -54,8 +54,8 @@
 li {
     opacity: .9;
     list-style-type: none;
-    margin-left: .5em;
-    color: #E1EBF1;
+    margin: 0 0 3px 0;
+    color: #a6a6a6;
 }
 
 .three {
@@ -108,7 +108,7 @@ li {
     top: 80%;
     width: 20%;
     text-align: left;
-    font-size: 1em;
+    font-size: 0.9em;
     color: #E1EBF1;
 }
 
@@ -136,7 +136,7 @@ li {
     top: 12%;
     position: absolute;
     right: 0%;
-    width: 70%;
+    width: 100%;
     text-align: right;
     /*color: #E1EBF1;*/
 }
@@ -148,7 +148,7 @@ li {
     top: 0%;
     position: absolute;
     right: 0%;
-    width: 70%;
+    width: 100%;
     /*visibility: hidden;*/
     /*color: #E1EBF1;*/
     /*background-color: #1E1E1E;*/
@@ -170,7 +170,7 @@ li {
 
 #openNav #exploreOrders b, #openAbout #about b {
     font-size: 1.1em;
-    font-family: 'tofinoBook';
+    font-family: 'tofinoMedium';
 }
 
 /*#openNav #exploreOrders:hover, #about:hover {
@@ -192,43 +192,45 @@ li {
     width: 100%;
     right: 0%;
     color: #E1EBF1;
-    background-color: #010C13;
+    /*background-color: #010C13;*/
 }
 
 #pubBox {
     position: absolute;
     height: 100%;
     top: 0%;
-    left: 0.8%;
-    width: 49.5%;
+    left: 1%;
+    width: 98%;
     /*visibility: hidden;*/
     color: #E1EBF1;
-    background-color: #666666;
+    background-color: #1a1a1a;
 }
 
 #pubBox #nature {
     position: relative;
     /*display: table-cell;*/
-    text-align: left;
-    width: 80%;
+    text-align: center;
+    width: 100%;
     height: 20%;
-    left: 4%;
+    left: 0%;
     top: 8%;
-    font-family: 'tofinoMedium';
+    font-family: 'tofinoLight';
     font-size: 1.3em;
     letter-spacing: .028em;
 }
-
+#pubBox #nature b{
+    font-family: 'tofinoMedium';
+}
 #pubBox #currentPublications {
     position: absolute;
     /*display: table-cell;*/
-    text-align: left;
+    text-align: center;
     width: 100%;
     height: 60%;
-    left: 4%;
+    left: 0%;
     top: 30%;
     font-family: 'tofinoLight';
-    font-size: 1.1em;
+    font-size: 1em;
     letter-spacing: .028em;
 }
 
@@ -242,7 +244,7 @@ li {
     width: 49%;
     /*visibility: hidden;*/
     color: #E1EBF1;
-    background-color: #030303;
+    background-color: #1a1a1a;
     /*display: table-cell;*/
 }
 
