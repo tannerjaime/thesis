@@ -54,8 +54,11 @@
 li {
     opacity: .9;
     list-style-type: none;
-    margin: 0 0 3px 0;
-    color: #a6a6a6;
+    margin: 0 0 4px 0;
+    color: #A5ADB1;
+    font-family: 'tofinoLight';
+    font-size: 0.95em;
+    
 }
 
 .three {
@@ -108,8 +111,9 @@ li {
     top: 80%;
     width: 20%;
     text-align: left;
-    font-size: 0.9em;
+    font-size: 1.1em;
     color: #E1EBF1;
+    overflow-y:auto
 }
 
 #line {
@@ -165,7 +169,7 @@ li {
     font-family: 'tofinoLight';
     font-size: 0.9em;
     letter-spacing: .028em;
-    right: 10%;
+    right: 0%;
 }
 
 #openNav #exploreOrders b, #openAbout #about b {
@@ -206,31 +210,32 @@ li {
     background-color: #1a1a1a;
 }
 
-#pubBox #nature {
+#pubBox #nature, #taxonomy {
     position: relative;
     /*display: table-cell;*/
-    text-align: center;
-    width: 100%;
+    text-align: left;
+    width: 50%;
     height: 20%;
-    left: 0%;
-    top: 8%;
+    left: 50%;
+    top: 12%;
     font-family: 'tofinoLight';
     font-size: 1.3em;
     letter-spacing: .028em;
 }
-#pubBox #nature b{
+#pubBox #nature b, #taxonomy b{
     font-family: 'tofinoMedium';
+    color:#EFC954;
 }
 #pubBox #currentPublications {
     position: absolute;
     /*display: table-cell;*/
-    text-align: center;
-    width: 100%;
+    text-align: left;
+    width: 50%;
     height: 60%;
-    left: 0%;
+    left: 47.75%;
     top: 30%;
-    font-family: 'tofinoLight';
-    font-size: 1em;
+    font-family: 'tofinoBook';
+    font-size: 1.1em;
     letter-spacing: .028em;
 }
 
@@ -240,48 +245,49 @@ li {
     position: relative;
     height: 100%;
     top: 0%;
-    left: 50.5%;
-    width: 49%;
+    left: 2%;
+    width: 48%;
     /*visibility: hidden;*/
     color: #E1EBF1;
     background-color: #1a1a1a;
     /*display: table-cell;*/
 }
 
-#otherInfo #heirarchy {
+#taxonomy {
     position: absolute;
     /*display: table-cell;*/
     text-align: left;
     width: 30%;
     height: 10%;
     left: 4%;
-    top: 8%;
-    font-family: 'tofinoMedium';
-    font-size: 1.3em;
-    letter-spacing: .028em;
+    /*top: 8%;*/
+    /*font-family: 'tofinoMedium';*/
+    /*font-size: 1.3em;*/
+    /*letter-spacing: .028em;*/
     /*color: ;*/
 }
 
-#otherInfo #info {
+#info {
     position: relative;
     /*display: table-cell;*/
     text-align: left;
     width: 30%;
     height: 70%;
     left: 4%;
-    top: 40%;
+    top: 20%;
     font-family: 'tofinoBold';
-    font-size: 1.15em;
-    letter-spacing: .028em;
+    font-size: 1.2em;
+    letter-spacing: .03em;
     /*color: ;*/
 }
 
-#otherInfo #info p {
+
+#info p {
     display: table-cell;
     padding-right: 4%;
 }
 
-#otherInfo #info b {
+#info b {
     font-family: 'tofinoLight';
     font-size: 0.95em;
     color: #A5ADB1;

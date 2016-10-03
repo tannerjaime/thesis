@@ -86,19 +86,20 @@
 	</div>
 
 	<div id="below">
-		<div id="otherInfo">
+		<<!-- div id="otherInfo">
 			<div id="heirarchy"> </div>
 			
-		</div>
+		</div> -->
 		<!--<div id="search"></div>-->
 		<div id="pubBox">
-			<div id="nature"> </div>
-			<!-- <div id="info">
+			<div id="nature"> Click on a species to learn more </div>
+			<div id="taxonomy">   </div>
+			<div id="info">
 				<p id="order"> </p>
 				<p id="family"> </p>
 				<p id="genus"> </p>
 				<p id="species"> </p>
-			</div> -->
+			</div>
 			<div id="currentPublications"></div>
 		</div>
 	</div>
@@ -517,6 +518,13 @@
 					// document.getElementById("phylum").innerHTML = "<b>PHYLUM</b><br>" + "Cnidaria";
 					// document.getElementById("class").innerHTML = "<b>CLASS</b><br>" + INTERSECTED.class;
 					// document.getElementById("order").innerHTML = "<b>ORDER</b><br>" + INTER
+
+					document.getElementById("order").innerHTML = "<b>ORDER</b><br>" + INTERSECTED.order;
+					document.getElementById("family").innerHTML = "<b>FAMILY</b><br>" + INTERSECTED.family;
+					document.getElementById("genus").innerHTML = "<b>GENUS</b><br>" + INTERSECTED.genus;
+					document.getElementById("species").innerHTML = "<b>SPECIES</b><br>" + INTERSECTED.species;
+
+					document.getElementById("taxonomy").innerHTML = "Taxonomic Details";
 					// }
 
 
@@ -538,7 +546,7 @@
 						document.getElementById("currentPublications").innerHTML = publicationString;
 					}
 					else {
-						document.getElementById("nature").innerHTML = "<b>" +INTERSECTED.sciName + " </b> is not mentioned in any articles";;
+						document.getElementById("nature").innerHTML = "<b>" +INTERSECTED.sciName + " </b> is not mentioned in any articles";
 						var publicationString = "<ul>\n";
 						publicationString += "<li href='" + INTERSECTED.natureArticles[a] + "'> </li>\n";
 						publicationString += "</ul>\n";
